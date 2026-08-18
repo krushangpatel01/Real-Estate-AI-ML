@@ -1,0 +1,1 @@
+-- EstateAI database schema - implementation will be added step by step.
