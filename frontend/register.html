@@ -1,1 +1,479 @@
-<!-- EstateAI project file - implementation will be added step by step. -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Create Account | EstateAI</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- ONLY Register CSS -->
+    <link
+        rel="stylesheet"
+        href="../assets/css/register.css"
+    >
+
+</head>
+
+
+<body>
+
+    <main class="reg-page">
+
+        <div class="reg-container">
+
+            <!-- ==================================================
+                 LEFT SIDE
+            =================================================== -->
+
+            <section class="reg-intro">
+
+                <div class="reg-brand">
+
+                    <div class="reg-brand-logo">
+                        E
+                    </div>
+
+                    <div class="reg-brand-name">
+                        Estate<span>AI</span>
+                    </div>
+
+                </div>
+
+
+                <div class="reg-intro-content">
+
+                    <h1>
+                        Find Your
+                        <br>
+
+                        <span>
+                            Future Home.
+                        </span>
+                    </h1>
+
+
+                    <p>
+                        Join EstateAI and discover intelligent
+                        real estate opportunities powered by
+                        location intelligence, property comparison
+                        and machine learning.
+                    </p>
+
+
+                    <div class="reg-features">
+
+                        <div class="reg-feature">
+
+                            <div class="reg-feature-icon">
+                                <span>⌂</span>
+                            </div>
+
+                            <div>
+                                Discover verified properties
+                            </div>
+
+                        </div>
+
+
+                        <div class="reg-feature">
+
+                            <div class="reg-feature-icon">
+                                <span>AI</span>
+                            </div>
+
+                            <div>
+                                AI-powered property price prediction
+                            </div>
+
+                        </div>
+
+
+                        <div class="reg-feature">
+
+                            <div class="reg-feature-icon">
+                                <span>◎</span>
+                            </div>
+
+                            <div>
+                                Find properties near your location
+                            </div>
+
+                        </div>
+
+
+                        <div class="reg-feature">
+
+                            <div class="reg-feature-icon">
+                                <span>⇄</span>
+                            </div>
+
+                            <div>
+                                Compare properties side by side
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="reg-intro-footer">
+
+                    Intelligent Real Estate.
+                    Powered by AI.
+
+                </div>
+
+            </section>
+
+
+            <!-- ==================================================
+                 RIGHT SIDE
+            =================================================== -->
+
+            <section class="reg-form-section">
+
+                <div class="reg-form-header">
+
+                    <h2>
+                        Create Account
+                    </h2>
+
+                    <p>
+                        Create your EstateAI account to get started.
+                    </p>
+
+                </div>
+
+
+                <!-- Message -->
+
+                <div
+                    id="regMessage"
+                    class="reg-message"
+                ></div>
+
+
+                <form
+                    id="registerForm"
+                    class="reg-form"
+                    novalidate
+                >
+
+                    <!-- ==========================================
+                         ROW 1
+                    =========================================== -->
+
+                    <div class="reg-form-row">
+
+                        <div class="reg-field">
+
+                            <label for="fullName">
+                                Full Name
+                            </label>
+
+                            <input
+                                type="text"
+                                id="fullName"
+                                name="full_name"
+                                placeholder="Enter your full name"
+                                autocomplete="name"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="reg-field">
+
+                            <label for="username">
+                                Username
+                            </label>
+
+                            <input
+                                type="text"
+                                id="username"
+                                name="username"
+                                placeholder="Example: krushang7"
+                                autocomplete="username"
+                                required
+                            >
+
+                            <small>
+                                Minimum 4 characters + number
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- ==========================================
+                         ROW 2
+                    =========================================== -->
+
+                    <div class="reg-form-row">
+
+                        <div class="reg-field">
+
+                            <label for="email">
+                                Email Address
+                            </label>
+
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                placeholder="you@example.com"
+                                autocomplete="email"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="reg-field">
+
+                            <label for="mobile">
+                                Mobile Number
+                            </label>
+
+                            <input
+                                type="tel"
+                                id="mobile"
+                                name="mobile"
+                                placeholder="9876543210"
+                                autocomplete="tel"
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- ==========================================
+                         ROW 3
+                    =========================================== -->
+
+                    <div class="reg-form-row">
+
+                        <div class="reg-field">
+
+                            <label for="password">
+                                Password
+                            </label>
+
+                            <div class="reg-password-box">
+
+                                <input
+                                    type="password"
+                                    id="password"
+                                    name="password"
+                                    placeholder="Create a strong password"
+                                    autocomplete="new-password"
+                                    required
+                                >
+
+                                <button
+                                    type="button"
+                                    class="reg-password-toggle"
+                                    data-target="password"
+                                >
+                                    Show
+                                </button>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="reg-field">
+
+                            <label for="confirmPassword">
+                                Confirm Password
+                            </label>
+
+                            <div class="reg-password-box">
+
+                                <input
+                                    type="password"
+                                    id="confirmPassword"
+                                    name="confirm_password"
+                                    placeholder="Confirm your password"
+                                    autocomplete="new-password"
+                                    required
+                                >
+
+                                <button
+                                    type="button"
+                                    class="reg-password-toggle"
+                                    data-target="confirmPassword"
+                                >
+                                    Show
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- ==========================================
+                         PASSWORD REQUIREMENTS
+                    =========================================== -->
+
+                    <div class="reg-password-rules">
+
+                        <span id="ruleLength">
+                            <i>✓</i> 8+ characters
+                        </span>
+
+                        <span id="ruleUpper">
+                            <i>✓</i> Uppercase letter
+                        </span>
+
+                        <span id="ruleLower">
+                            <i>✓</i> Lowercase letter
+                        </span>
+
+                        <span id="ruleNumber">
+                            <i>✓</i> Number
+                        </span>
+
+                        <span id="ruleSpecial">
+                            <i>✓</i> Special character
+                        </span>
+
+                    </div>
+
+
+                    <!-- ==========================================
+                         ACCOUNT TYPE
+                    =========================================== -->
+
+                    <div class="reg-field">
+
+                        <label for="role">
+                            Account Type
+                        </label>
+
+                        <select
+                            id="role"
+                            name="role"
+                            required
+                        >
+
+                            <option value="buyer">
+                                Buyer — Find Properties
+                            </option>
+
+                            <option value="seller">
+                                Seller — List Properties
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- ==========================================
+                         TERMS
+                    =========================================== -->
+
+                    <label class="reg-terms">
+
+                        <input
+                            type="checkbox"
+                            id="terms"
+                            required
+                        >
+
+                        <span>
+
+                            I agree to the
+
+                            <a href="#">
+                                Terms & Conditions
+                            </a>
+
+                            and
+
+                            <a href="#">
+                                Privacy Policy
+                            </a>
+
+                        </span>
+
+                    </label>
+
+
+                    <!-- ==========================================
+                         SUBMIT
+                    =========================================== -->
+
+                    <button
+                        type="submit"
+                        id="registerBtn"
+                        class="reg-submit"
+                    >
+
+                        <span>
+                            Create Account
+                        </span>
+
+                        <span class="reg-submit-arrow">
+                            →
+                        </span>
+
+                    </button>
+
+
+                    <!-- ==========================================
+                         LOGIN
+                    =========================================== -->
+
+                    <div class="reg-login">
+
+                        Already have an account?
+
+                        <a href="login.html">
+                            Sign In
+                        </a>
+
+                    </div>
+
+                </form>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <script src="../assets/js/auth.js"></script>
+
+</body>
+
+</html>

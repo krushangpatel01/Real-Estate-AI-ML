@@ -1,1 +1,9 @@
 # EstateAI Python dependencies
+fastapi
+uvicorn
+sqlalchemy
+pymysql
+python-dotenv
+passlib[bcrypt]
+python-multipart
+email-validator

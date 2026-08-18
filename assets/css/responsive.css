@@ -1,1 +1,21 @@
 /* EstateAI project stylesheet - implementation will be added step by step. */
+/* Large desktop */
+@media (min-width: 1440px) {}
+
+/* Desktop */
+@media (max-width: 1439px) {}
+
+/* Laptop / small desktop */
+@media (max-width: 1200px) {}
+
+/* Tablet */
+@media (max-width: 992px) {}
+
+/* Small tablet */
+@media (max-width: 768px) {}
+
+/* Mobile */
+@media (max-width: 576px) {}
+
+/* Small mobile */
+@media (max-width: 400px) {}

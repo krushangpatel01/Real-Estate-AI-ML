@@ -1,0 +1,1423 @@
+/* ============================================================
+   ESTATEAI
+   REGISTER PAGE
+   Premium AI / Luxury Real Estate
+============================================================ */
+
+
+/* ============================================================
+   RESET
+============================================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    width: 100%;
+    min-height: 100%;
+}
+
+
+body {
+    width: 100%;
+    min-height: 100vh;
+
+    font-family: "DM Sans", sans-serif;
+
+    background: #020617;
+
+    color: #f8fafc;
+
+    overflow-x: hidden;
+}
+
+
+/* ============================================================
+   PAGE
+============================================================ */
+
+.reg-page {
+
+    min-height: 100vh;
+
+    width: 100%;
+
+    padding: 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    position: relative;
+
+    background:
+
+        radial-gradient(
+            circle at 10% 10%,
+            rgba(37, 99, 235, 0.14),
+            transparent 28%
+        ),
+
+        radial-gradient(
+            circle at 90% 90%,
+            rgba(34, 211, 238, 0.10),
+            transparent 30%
+        ),
+
+        #020617;
+}
+
+
+/* ============================================================
+   BACKGROUND GLOW
+============================================================ */
+
+.reg-page::before {
+
+    content: "";
+
+    position: fixed;
+
+    width: 420px;
+
+    height: 420px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(37, 99, 235, 0.10);
+
+    filter: blur(120px);
+
+    top: -180px;
+
+    left: -180px;
+
+    pointer-events: none;
+}
+
+
+.reg-page::after {
+
+    content: "";
+
+    position: fixed;
+
+    width: 420px;
+
+    height: 420px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(34, 211, 238, 0.07);
+
+    filter: blur(120px);
+
+    bottom: -200px;
+
+    right: -180px;
+
+    pointer-events: none;
+}
+
+
+/* ============================================================
+   MAIN CONTAINER
+============================================================ */
+
+.reg-container {
+
+    width: 100%;
+
+    max-width: 1180px;
+
+    min-height: 700px;
+
+    display: grid;
+
+    grid-template-columns:
+        0.88fr 1.12fr;
+
+    position: relative;
+
+    z-index: 2;
+
+    overflow: hidden;
+
+    border:
+
+        1px solid
+        rgba(148, 163, 184, 0.16);
+
+    border-radius: 28px;
+
+    background:
+        rgba(3, 8, 25, 0.92);
+
+    box-shadow:
+
+        0 35px 100px
+        rgba(0, 0, 0, 0.50),
+
+        0 0 0 1px
+        rgba(255, 255, 255, 0.02);
+
+}
+
+
+/* ============================================================
+   LEFT SIDE
+============================================================ */
+
+.reg-intro {
+
+    min-width: 0;
+
+    padding:
+        60px 50px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+
+    border-right:
+
+        1px solid
+        rgba(148, 163, 184, 0.13);
+
+    background:
+
+        linear-gradient(
+            145deg,
+            rgba(10, 26, 66, 0.90),
+            rgba(2, 8, 27, 0.95)
+        );
+}
+
+
+/* ============================================================
+   BRAND
+============================================================ */
+
+.reg-brand {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 11px;
+}
+
+
+.reg-brand-logo {
+
+    width: 44px;
+
+    height: 44px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 12px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #2563eb,
+            #22d3ee
+        );
+
+    color: white;
+
+    font-family:
+        "Outfit",
+        sans-serif;
+
+    font-size: 20px;
+
+    font-weight: 800;
+
+    box-shadow:
+
+        0 10px 30px
+        rgba(34, 211, 238, 0.18);
+}
+
+
+.reg-brand-name {
+
+    font-family:
+        "Outfit",
+        sans-serif;
+
+    font-size: 24px;
+
+    line-height: 1;
+
+    font-weight: 700;
+
+    letter-spacing: -0.5px;
+
+    color: #f8fafc;
+}
+
+
+.reg-brand-name span {
+
+    color: #22d3ee;
+}
+
+
+/* ============================================================
+   INTRO CONTENT
+============================================================ */
+
+.reg-intro-content {
+
+    margin-top: 70px;
+
+    margin-bottom: auto;
+
+    padding-top: 60px;
+}
+
+
+.reg-intro-content h1 {
+
+    font-family:
+        "Outfit",
+        sans-serif;
+
+    font-size:
+        clamp(42px, 4vw, 60px);
+
+    line-height: 1.02;
+
+    letter-spacing: -2px;
+
+    font-weight: 800;
+
+    color: #ffffff;
+}
+
+
+.reg-intro-content h1 span {
+
+    display: inline-block;
+
+    margin-top: 8px;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            #ffffff 0%,
+            #bff8ff 45%,
+            #22d3ee 100%
+        );
+
+    -webkit-background-clip: text;
+
+    background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+
+    color: transparent;
+}
+
+
+.reg-intro-content > p {
+
+    max-width: 470px;
+
+    margin-top: 28px;
+
+    color: #94a3b8;
+
+    font-size: 14px;
+
+    line-height: 1.85;
+
+}
+
+
+/* ============================================================
+   FEATURES
+============================================================ */
+
+.reg-features {
+
+    margin-top: 38px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 16px;
+}
+
+
+.reg-feature {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    color: #dbeafe;
+
+    font-size: 13px;
+
+    line-height: 1.4;
+}
+
+
+.reg-feature-icon {
+
+    width: 40px;
+
+    height: 40px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 11px;
+
+    border:
+        1px solid
+        rgba(34, 211, 238, 0.20);
+
+    background:
+        rgba(34, 211, 238, 0.06);
+
+    color: #22d3ee;
+
+    font-family:
+        "Outfit",
+        sans-serif;
+
+    font-size: 13px;
+}
+
+
+.reg-intro-footer {
+
+    margin-top: 45px;
+
+    color: #475569;
+
+    font-size: 11px;
+
+    letter-spacing: 0.4px;
+}
+
+
+/* ============================================================
+   RIGHT FORM SECTION
+============================================================ */
+
+.reg-form-section {
+
+    min-width: 0;
+
+    padding:
+        58px 50px;
+
+    background:
+        rgba(2, 6, 23, 0.55);
+}
+
+
+/* ============================================================
+   FORM HEADER
+============================================================ */
+
+.reg-form-header {
+
+    margin-bottom: 30px;
+}
+
+
+.reg-form-header h2 {
+
+    font-family:
+        "Outfit",
+        sans-serif;
+
+    font-size: 34px;
+
+    line-height: 1.15;
+
+    letter-spacing: -0.7px;
+
+    font-weight: 700;
+
+    color: #ffffff;
+}
+
+
+.reg-form-header p {
+
+    margin-top: 9px;
+
+    color: #64748b;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+}
+
+
+/* ============================================================
+   FORM
+============================================================ */
+
+.reg-form {
+
+    width: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 18px;
+}
+
+
+.reg-form-row {
+
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(0, 1fr);
+
+    gap: 18px;
+}
+
+
+/* ============================================================
+   FIELD
+============================================================ */
+
+.reg-field {
+
+    width: 100%;
+
+    min-width: 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+
+.reg-field label {
+
+    display: block;
+
+    color: #cbd5e1;
+
+    font-size: 12px;
+
+    line-height: 1.4;
+
+    font-weight: 600;
+}
+
+
+.reg-field small {
+
+    color: #475569;
+
+    font-size: 10px;
+
+    line-height: 1.2;
+}
+
+
+/* ============================================================
+   INPUT + SELECT
+============================================================ */
+
+.reg-field > input,
+.reg-field > select {
+
+    width: 100%;
+
+    height: 50px;
+
+    min-width: 0;
+
+    display: block;
+
+    padding:
+        0 15px;
+
+    border-radius: 12px;
+
+    border:
+        1px solid
+        rgba(100, 116, 139, 0.22);
+
+    outline: none;
+
+    background:
+        rgba(15, 23, 42, 0.82);
+
+    color: #f8fafc;
+
+    font-family:
+        "DM Sans",
+        sans-serif;
+
+    font-size: 13px;
+
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+}
+
+
+.reg-field > input::placeholder {
+
+    color: #475569;
+
+}
+
+
+.reg-field > input:hover,
+.reg-field > select:hover {
+
+    border-color:
+        rgba(100, 116, 139, 0.42);
+}
+
+
+.reg-field > input:focus,
+.reg-field > select:focus {
+
+    border-color:
+        #22d3ee;
+
+    background:
+        rgba(15, 23, 42, 0.95);
+
+    box-shadow:
+        0 0 0 3px
+        rgba(34, 211, 238, 0.08);
+}
+
+
+/* ============================================================
+   AUTOFILL FIX
+============================================================ */
+
+.reg-field input:-webkit-autofill,
+.reg-field input:-webkit-autofill:hover,
+.reg-field input:-webkit-autofill:focus {
+
+    -webkit-text-fill-color: #f8fafc;
+
+    -webkit-box-shadow:
+        0 0 0 1000px #0f172a inset;
+
+    transition:
+        background-color 9999s ease-in-out 0s;
+}
+
+
+/* ============================================================
+   PASSWORD BOX
+============================================================ */
+
+.reg-password-box {
+
+    width: 100%;
+
+    height: 50px;
+
+    position: relative;
+
+    min-width: 0;
+}
+
+
+.reg-password-box input {
+
+    width: 100%;
+
+    height: 100%;
+
+    display: block;
+
+    padding:
+        0 70px 0 15px;
+
+    border-radius: 12px;
+
+    border:
+        1px solid
+        rgba(100, 116, 139, 0.22);
+
+    outline: none;
+
+    background:
+        rgba(15, 23, 42, 0.82);
+
+    color: #f8fafc;
+
+    font-family:
+        "DM Sans",
+        sans-serif;
+
+    font-size: 13px;
+}
+
+
+.reg-password-box input::placeholder {
+
+    color: #475569;
+}
+
+
+.reg-password-box input:focus {
+
+    border-color:
+        #22d3ee;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(34, 211, 238, 0.08);
+}
+
+
+.reg-password-toggle {
+
+    position: absolute;
+
+    top: 50%;
+
+    right: 12px;
+
+    transform:
+        translateY(-50%);
+
+    height: 32px;
+
+    padding:
+        0 8px;
+
+    border: none;
+
+    background: transparent;
+
+    color: #64748b;
+
+    font-family:
+        "DM Sans",
+        sans-serif;
+
+    font-size: 11px;
+
+    cursor: pointer;
+
+    z-index: 2;
+}
+
+
+.reg-password-toggle:hover {
+
+    color: #22d3ee;
+}
+
+
+/* ============================================================
+   PASSWORD RULES
+============================================================ */
+
+.reg-password-rules {
+
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    column-gap: 20px;
+
+    row-gap: 7px;
+
+    margin-top: -2px;
+
+    padding:
+        2px 2px;
+}
+
+
+.reg-password-rules span {
+
+    color: #475569;
+
+    font-size: 10px;
+
+    line-height: 1.3;
+
+    transition:
+        color 0.2s ease;
+}
+
+
+.reg-password-rules span i {
+
+    font-style: normal;
+
+    color: #475569;
+
+}
+
+
+.reg-password-rules span.valid {
+
+    color: #22d3ee;
+}
+
+
+.reg-password-rules span.valid i {
+
+    color: #22d3ee;
+}
+
+
+/* ============================================================
+   SELECT
+============================================================ */
+
+.reg-field > select {
+
+    appearance: none;
+
+    -webkit-appearance: none;
+
+    cursor: pointer;
+
+    padding-right: 40px;
+
+    background-image:
+
+        linear-gradient(
+            45deg,
+            transparent 50%,
+            #94a3b8 50%
+        ),
+
+        linear-gradient(
+            135deg,
+            #94a3b8 50%,
+            transparent 50%
+        );
+
+    background-position:
+
+        calc(100% - 18px) 21px,
+
+        calc(100% - 13px) 21px;
+
+    background-size:
+        5px 5px,
+        5px 5px;
+
+    background-repeat: no-repeat;
+}
+
+
+.reg-field > select option {
+
+    background: #020617;
+
+    color: #f8fafc;
+}
+
+
+/* ============================================================
+   TERMS
+============================================================ */
+
+.reg-terms {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 10px;
+
+    cursor: pointer;
+
+    margin-top: 2px;
+}
+
+
+.reg-terms input {
+
+    width: 15px;
+
+    height: 15px;
+
+    flex-shrink: 0;
+
+    margin-top: 1px;
+
+    accent-color: #22d3ee;
+
+    cursor: pointer;
+}
+
+
+.reg-terms span {
+
+    color: #64748b;
+
+    font-size: 10px;
+
+    line-height: 1.6;
+}
+
+
+.reg-terms a {
+
+    color: #22d3ee;
+
+    text-decoration: none;
+}
+
+
+.reg-terms a:hover {
+
+    text-decoration: underline;
+}
+
+
+/* ============================================================
+   SUBMIT BUTTON
+============================================================ */
+
+.reg-submit {
+
+    width: 100%;
+
+    height: 54px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    margin-top: 3px;
+
+    border: none;
+
+    border-radius: 13px;
+
+    background:
+
+        linear-gradient(
+            100deg,
+            #2563eb 0%,
+            #087fce 50%,
+            #0891b2 100%
+        );
+
+    color: white;
+
+    font-family:
+        "DM Sans",
+        sans-serif;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 14px 35px
+        rgba(37, 99, 235, 0.20);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        opacity 0.25s ease;
+}
+
+
+.reg-submit:hover {
+
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 18px 40px
+        rgba(34, 211, 238, 0.18);
+}
+
+
+.reg-submit:active {
+
+    transform:
+        translateY(0);
+}
+
+
+.reg-submit:disabled {
+
+    opacity: 0.6;
+
+    cursor: not-allowed;
+
+    transform: none;
+}
+
+
+.reg-submit-arrow {
+
+    font-size: 18px;
+
+    line-height: 1;
+}
+
+
+/* ============================================================
+   LOGIN
+============================================================ */
+
+.reg-login {
+
+    text-align: center;
+
+    color: #64748b;
+
+    font-size: 11px;
+
+    line-height: 1.5;
+
+    margin-top: -2px;
+}
+
+
+.reg-login a {
+
+    color: #22d3ee;
+
+    text-decoration: none;
+
+    font-weight: 600;
+}
+
+
+.reg-login a:hover {
+
+    text-decoration: underline;
+}
+
+
+/* ============================================================
+   MESSAGE
+============================================================ */
+
+.reg-message {
+
+    width: 100%;
+
+    display: none;
+
+    padding:
+        11px 13px;
+
+    margin-bottom: 18px;
+
+    border-radius: 10px;
+
+    font-size: 11px;
+
+    line-height: 1.5;
+}
+
+
+.reg-message.error {
+
+    display: block;
+
+    color: #fca5a5;
+
+    background:
+        rgba(239, 68, 68, 0.07);
+
+    border:
+        1px solid
+        rgba(239, 68, 68, 0.20);
+}
+
+
+.reg-message.success {
+
+    display: block;
+
+    color: #86efac;
+
+    background:
+        rgba(34, 197, 94, 0.07);
+
+    border:
+        1px solid
+        rgba(34, 197, 94, 0.20);
+}
+
+
+/* ============================================================
+   TABLET
+============================================================ */
+
+@media (max-width: 1050px) {
+
+    .reg-container {
+
+        grid-template-columns:
+            0.8fr 1.2fr;
+
+    }
+
+
+    .reg-intro {
+
+        padding:
+            50px 35px;
+
+    }
+
+
+    .reg-form-section {
+
+        padding:
+            50px 35px;
+
+    }
+
+
+    .reg-intro-content h1 {
+
+        font-size: 45px;
+
+    }
+
+}
+
+
+/* ============================================================
+   SMALL TABLET
+============================================================ */
+
+@media (max-width: 850px) {
+
+    .reg-page {
+
+        align-items: flex-start;
+
+        padding:
+            20px;
+
+    }
+
+
+    .reg-container {
+
+        max-width: 650px;
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .reg-intro {
+
+        border-right: none;
+
+        border-bottom:
+            1px solid
+            rgba(148, 163, 184, 0.13);
+
+        padding:
+            40px;
+
+    }
+
+
+    .reg-intro-content {
+
+        margin-top: 35px;
+
+        padding-top: 0;
+
+    }
+
+
+    .reg-intro-content h1 {
+
+        font-size: 48px;
+
+    }
+
+
+    .reg-intro-content > p {
+
+        max-width: 600px;
+
+    }
+
+
+    .reg-features {
+
+        display: grid;
+
+        grid-template-columns:
+            1fr 1fr;
+
+    }
+
+
+    .reg-intro-footer {
+
+        display: none;
+
+    }
+
+
+    .reg-form-section {
+
+        padding:
+            40px;
+
+    }
+
+}
+
+
+/* ============================================================
+   MOBILE
+============================================================ */
+
+@media (max-width: 650px) {
+
+    .reg-page {
+
+        padding:
+            10px;
+
+    }
+
+
+    .reg-container {
+
+        border-radius:
+            20px;
+
+    }
+
+
+    .reg-intro {
+
+        padding:
+            30px 22px;
+
+    }
+
+
+    .reg-form-section {
+
+        padding:
+            30px 22px;
+
+    }
+
+
+    .reg-intro-content h1 {
+
+        font-size:
+            39px;
+
+        letter-spacing:
+            -1.5px;
+
+    }
+
+
+    .reg-intro-content > p {
+
+        font-size:
+            13px;
+
+        line-height:
+            1.7;
+
+    }
+
+
+    .reg-features {
+
+        grid-template-columns:
+            1fr;
+
+        gap:
+            13px;
+
+    }
+
+
+    .reg-form-row {
+
+        grid-template-columns:
+            1fr;
+
+        gap:
+            18px;
+
+    }
+
+
+    .reg-password-rules {
+
+        grid-template-columns:
+            1fr 1fr;
+
+    }
+
+
+    .reg-form-header h2 {
+
+        font-size:
+            29px;
+
+    }
+
+}
+
+
+/* ============================================================
+   SMALL MOBILE
+============================================================ */
+
+@media (max-width: 400px) {
+
+    .reg-page {
+
+        padding:
+            6px;
+
+    }
+
+
+    .reg-container {
+
+        border-radius:
+            17px;
+
+    }
+
+
+    .reg-intro {
+
+        padding:
+            25px 18px;
+
+    }
+
+
+    .reg-form-section {
+
+        padding:
+            25px 18px;
+
+    }
+
+
+    .reg-brand-name {
+
+        font-size:
+            21px;
+
+    }
+
+
+    .reg-brand-logo {
+
+        width:
+            40px;
+
+        height:
+            40px;
+
+    }
+
+
+    .reg-intro-content h1 {
+
+        font-size:
+            34px;
+
+    }
+
+
+    .reg-form-header h2 {
+
+        font-size:
+            26px;
+
+    }
+
+
+    .reg-password-rules {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .reg-submit {
+
+        height:
+            52px;
+
+    }
+
+}
