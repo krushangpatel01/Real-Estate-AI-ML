@@ -1,1 +1,453 @@
 <!-- EstateAI project file - implementation will be added step by step. -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Login | EstateAI</title>
+
+
+    <!-- Google Fonts -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- ONLY LOGIN CSS -->
+
+    <link
+        rel="stylesheet"
+        href="../assets/css/login.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<main class="login-page">
+
+
+    <div class="login-container">
+
+
+        <!-- ==================================================
+             LEFT SIDE
+        =================================================== -->
+
+        <section class="login-intro">
+
+
+            <!-- Brand -->
+
+            <a
+                href="index.html"
+                class="login-brand"
+            >
+
+                <div class="login-brand-logo">
+                    E
+                </div>
+
+                <div class="login-brand-name">
+                    Estate<span>AI</span>
+                </div>
+
+            </a>
+
+
+            <!-- Main Content -->
+
+            <div class="login-intro-content">
+
+
+                <div class="login-eyebrow">
+
+                    <span class="login-eyebrow-dot"></span>
+
+                    INTELLIGENT REAL ESTATE
+
+                </div>
+
+
+                <h1>
+
+                    Welcome
+                    <br>
+
+                    <span>Back.</span>
+
+                </h1>
+
+
+                <p>
+
+                    Access your EstateAI account and discover
+                    smarter property opportunities powered by
+                    artificial intelligence and location intelligence.
+
+                </p>
+
+
+                <!-- Features -->
+
+                <div class="login-features">
+
+
+                    <div class="login-feature">
+
+                        <div class="login-feature-icon">
+                            AI
+                        </div>
+
+                        <div class="login-feature-text">
+
+                            <strong>
+                                AI Price Prediction
+                            </strong>
+
+                            <span>
+                                Make smarter property decisions.
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="login-feature">
+
+                        <div class="login-feature-icon">
+                            ◎
+                        </div>
+
+                        <div class="login-feature-text">
+
+                            <strong>
+                                Location Intelligence
+                            </strong>
+
+                            <span>
+                                Discover properties near you.
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="login-feature">
+
+                        <div class="login-feature-icon">
+                            ⇄
+                        </div>
+
+                        <div class="login-feature-text">
+
+                            <strong>
+                                Property Comparison
+                            </strong>
+
+                            <span>
+                                Compare properties side by side.
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+            <div class="login-intro-footer">
+
+                EstateAI
+
+                <span>•</span>
+
+                Intelligent Property Platform
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- ==================================================
+             RIGHT SIDE
+        =================================================== -->
+
+        <section class="login-form-section">
+
+
+            <div class="login-form-wrapper">
+
+
+                <!-- Header -->
+
+                <div class="login-header">
+
+                    <h2>
+                        Sign In
+                    </h2>
+
+                    <p>
+                        Enter your credentials to continue.
+                    </p>
+
+                </div>
+
+
+                <!-- Message -->
+
+                <div
+                    id="loginMessage"
+                    class="login-message"
+                ></div>
+
+
+                <!-- Form -->
+
+                <form
+                    id="loginForm"
+                    class="login-form"
+                    novalidate
+                >
+
+
+                    <!-- Email -->
+
+                    <div class="login-field">
+
+                        <label for="loginEmail">
+
+                            Email Address
+
+                        </label>
+
+
+                        <div class="login-input-wrapper">
+
+
+                            <span class="login-input-icon">
+
+                                @
+
+                            </span>
+
+
+                            <input
+                                type="email"
+                                id="loginEmail"
+                                name="email"
+                                placeholder="you@example.com"
+                                autocomplete="email"
+                                required
+                            >
+
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- Password -->
+
+                    <div class="login-field">
+
+
+                        <div class="login-label-row">
+
+                            <label for="loginPassword">
+
+                                Password
+
+                            </label>
+
+
+                            <a
+                                href="forgot-password.html"
+                                class="login-forgot"
+                            >
+
+                                Forgot Password?
+
+                            </a>
+
+                        </div>
+
+
+                        <div class="login-input-wrapper">
+
+
+                            <span class="login-input-icon">
+
+                                •••
+
+                            </span>
+
+
+                            <input
+                                type="password"
+                                id="loginPassword"
+                                name="password"
+                                placeholder="Enter your password"
+                                autocomplete="current-password"
+                                required
+                            >
+
+
+                            <button
+                                type="button"
+                                id="loginPasswordToggle"
+                                class="login-password-toggle"
+                            >
+
+                                Show
+
+                            </button>
+
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- Remember -->
+
+                    <div class="login-options">
+
+
+                        <label class="login-remember">
+
+                            <input
+                                type="checkbox"
+                                id="rememberMe"
+                            >
+
+                            <span>
+                                Remember me
+                            </span>
+
+                        </label>
+
+
+                    </div>
+
+
+
+                    <!-- Submit -->
+
+                    <button
+                        type="submit"
+                        id="loginBtn"
+                        class="login-submit"
+                    >
+
+                        <span>
+                            Sign In
+                        </span>
+
+                        <span class="login-submit-arrow">
+                            →
+                        </span>
+
+                    </button>
+
+
+
+                    <!-- Divider -->
+
+                    <div class="login-divider">
+
+                        <span></span>
+
+                        <small>
+                            NEW TO ESTATEAI?
+                        </small>
+
+                        <span></span>
+
+                    </div>
+
+
+
+                    <!-- Register -->
+
+                    <a
+                        href="register.html"
+                        class="login-create-account"
+                    >
+
+                        Create a New Account
+
+                        <span>
+                            →
+                        </span>
+
+                    </a>
+
+
+                </form>
+
+
+                <!-- Security -->
+
+                <div class="login-security">
+
+                    <span class="login-security-icon">
+                        ✓
+                    </span>
+
+                    <span>
+                        Your account information is securely protected.
+                    </span>
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+    </div>
+
+
+</main>
+
+
+<script src="../assets/js/auth.js"></script>
+
+</body>
+
+</html>

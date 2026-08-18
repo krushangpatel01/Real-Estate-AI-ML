@@ -399,3 +399,361 @@ registerForm.addEventListener(
 
     }
 );
+
+
+//------------------------------------------------------------------------------------------------------------------------------------------//
+
+
+/* ============================================================
+   ESTATEAI LOGIN
+============================================================ */
+
+const loginForm =
+    document.getElementById("loginForm");
+
+
+if (loginForm) {
+
+    const loginMessage =
+        document.getElementById("loginMessage");
+
+    const loginBtn =
+        document.getElementById("loginBtn");
+
+    const loginPassword =
+        document.getElementById("loginPassword");
+
+    const loginPasswordToggle =
+        document.getElementById(
+            "loginPasswordToggle"
+        );
+
+
+    /* ========================================================
+       SHOW / HIDE PASSWORD
+    ======================================================== */
+
+    if (loginPasswordToggle) {
+
+        loginPasswordToggle.addEventListener(
+            "click",
+            function () {
+
+                if (
+                    loginPassword.type ===
+                    "password"
+                ) {
+
+                    loginPassword.type =
+                        "text";
+
+                    loginPasswordToggle.textContent =
+                        "Hide";
+
+                } else {
+
+                    loginPassword.type =
+                        "password";
+
+                    loginPasswordToggle.textContent =
+                        "Show";
+
+                }
+
+            }
+        );
+
+    }
+
+
+    /* ========================================================
+       MESSAGE
+    ======================================================== */
+
+    function showLoginMessage(
+        message,
+        type
+    ) {
+
+        loginMessage.textContent =
+            message;
+
+        loginMessage.className =
+            `login-message ${type}`;
+
+    }
+
+
+    /* ========================================================
+       LOGIN SUBMIT
+    ======================================================== */
+
+    loginForm.addEventListener(
+        "submit",
+        async function (event) {
+
+            event.preventDefault();
+
+
+            const email =
+                document
+                    .getElementById(
+                        "loginEmail"
+                    )
+                    .value
+                    .trim();
+
+
+            const password =
+                loginPassword.value;
+
+
+            const rememberMe =
+                document
+                    .getElementById(
+                        "rememberMe"
+                    )
+                    .checked;
+
+
+            /* ================================================
+               BASIC VALIDATION
+            ================================================ */
+
+            if (!email) {
+
+                showLoginMessage(
+                    "Please enter your email address.",
+                    "error"
+                );
+
+                return;
+
+            }
+
+
+            if (!password) {
+
+                showLoginMessage(
+                    "Please enter your password.",
+                    "error"
+                );
+
+                return;
+
+            }
+
+
+            /* ================================================
+               BUTTON LOADING
+            ================================================ */
+
+            loginBtn.disabled = true;
+
+            loginBtn
+                .querySelector("span")
+                .textContent =
+                "Signing In...";
+
+
+            try {
+
+                /*
+                 * IMPORTANT:
+                 *
+                 * Your FastAPI login endpoint may use
+                 * JSON or OAuth2 form data.
+                 *
+                 * We will first use the JSON endpoint.
+                 */
+
+                const response =
+                    await fetch(
+                        `${API_URL}/api/auth/login`,
+                        {
+
+                            method: "POST",
+
+                            headers: {
+
+                                "Content-Type":
+                                    "application/json"
+
+                            },
+
+                            body:
+                                JSON.stringify({
+
+                                    email:
+                                        email,
+
+                                    password:
+                                        password
+
+                                })
+
+                        }
+                    );
+
+
+                const data =
+                    await response.json();
+
+
+                /* ============================================
+                   ERROR
+                ============================================ */
+
+                if (!response.ok) {
+
+                    let errorMessage =
+                        "Invalid email or password.";
+
+
+                    if (data.detail) {
+
+                        if (
+                            typeof data.detail ===
+                            "string"
+                        ) {
+
+                            errorMessage =
+                                data.detail;
+
+                        } else if (
+                            Array.isArray(
+                                data.detail
+                            )
+                        ) {
+
+                            errorMessage =
+                                data.detail
+                                    .map(
+                                        item =>
+                                            item.msg
+                                    )
+                                    .join(" ");
+
+                        }
+
+                    }
+
+
+                    throw new Error(
+                        errorMessage
+                    );
+
+                }
+
+
+                /* ============================================
+                   SAVE AUTH DATA
+                ============================================ */
+
+                if (data.access_token) {
+
+                    localStorage.setItem(
+                        "estateai_token",
+                        data.access_token
+                    );
+
+                }
+
+
+                if (data.token) {
+
+                    localStorage.setItem(
+                        "estateai_token",
+                        data.token
+                    );
+
+                }
+
+
+                if (data.user) {
+
+                    localStorage.setItem(
+                        "estateai_user",
+                        JSON.stringify(
+                            data.user
+                        )
+                    );
+
+                }
+
+
+                if (rememberMe) {
+
+                    localStorage.setItem(
+                        "estateai_remember",
+                        "true"
+                    );
+
+                } else {
+
+                    sessionStorage.setItem(
+                        "estateai_session",
+                        "true"
+                    );
+
+                }
+
+
+                /* ============================================
+                   SUCCESS
+                ============================================ */
+
+                showLoginMessage(
+                    "Login successful! Redirecting...",
+                    "success"
+                );
+
+
+                setTimeout(
+                    function () {
+
+                        /*
+                         * For now send user to
+                         * the main property page.
+                         *
+                         * Later we will create the
+                         * complete dashboard system.
+                         */
+
+                        window.location.href =
+                            "properties.html";
+
+                    },
+                    1000
+                );
+
+
+            } catch (error) {
+
+                console.error(
+                    "Login Error:",
+                    error
+                );
+
+
+                showLoginMessage(
+                    error.message ||
+                    "Unable to connect to the server.",
+                    "error"
+                );
+
+            } finally {
+
+                loginBtn.disabled = false;
+
+                loginBtn
+                    .querySelector("span")
+                    .textContent =
+                    "Sign In";
+
+            }
+
+        }
+    );
+
+}
