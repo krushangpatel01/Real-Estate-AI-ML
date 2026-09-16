@@ -404,15 +404,26 @@ registerForm.addEventListener(
 //------------------------------------------------------------------------------------------------------------------------------------------//
 
 
-/* ============================================================
-   ESTATEAI LOGIN
-============================================================ */
+/* =========================================================
+   ESTATEAI
+   LOGIN AUTHENTICATION
+========================================================= */
 
-const loginForm =
-    document.getElementById("loginForm");
+document.addEventListener("DOMContentLoaded", function () {
+
+    /* =====================================================
+       API
+    ===================================================== */
+
+    const API_URL = "http://127.0.0.1:8000";
 
 
-if (loginForm) {
+    /* =====================================================
+       ELEMENTS
+    ===================================================== */
+
+    const loginForm =
+        document.getElementById("loginForm");
 
     const loginMessage =
         document.getElementById("loginMessage");
@@ -420,43 +431,102 @@ if (loginForm) {
     const loginBtn =
         document.getElementById("loginBtn");
 
-    const loginPassword =
-        document.getElementById("loginPassword");
+    const loginBtnText =
+        document.getElementById("loginBtnText");
 
-    const loginPasswordToggle =
-        document.getElementById(
-            "loginPasswordToggle"
+    const emailInput =
+        document.getElementById("email");
+
+    const passwordInput =
+        document.getElementById("password");
+
+    const togglePassword =
+        document.getElementById("togglePassword");
+
+    const rememberMe =
+        document.getElementById("rememberMe");
+
+
+    /* =====================================================
+       CHECK FORM
+    ===================================================== */
+
+    if (!loginForm) {
+
+        console.error(
+            "EstateAI: loginForm not found."
         );
 
+        return;
+    }
 
-    /* ========================================================
+
+    /* =====================================================
+       SHOW MESSAGE
+    ===================================================== */
+
+    function showLoginMessage(
+        message,
+        type
+    ) {
+
+        if (!loginMessage) {
+            alert(message);
+            return;
+        }
+
+        loginMessage.textContent =
+            message;
+
+        loginMessage.className =
+            "login-message " + type;
+
+    }
+
+
+    /* =====================================================
        SHOW / HIDE PASSWORD
-    ======================================================== */
+    ===================================================== */
 
-    if (loginPasswordToggle) {
+    if (
+        togglePassword &&
+        passwordInput
+    ) {
 
-        loginPasswordToggle.addEventListener(
+        togglePassword.addEventListener(
             "click",
-            function () {
+            function (event) {
+
+                event.preventDefault();
 
                 if (
-                    loginPassword.type ===
+                    passwordInput.type ===
                     "password"
                 ) {
 
-                    loginPassword.type =
+                    passwordInput.type =
                         "text";
 
-                    loginPasswordToggle.textContent =
+                    togglePassword.textContent =
                         "Hide";
+
+                    togglePassword.setAttribute(
+                        "aria-label",
+                        "Hide password"
+                    );
 
                 } else {
 
-                    loginPassword.type =
+                    passwordInput.type =
                         "password";
 
-                    loginPasswordToggle.textContent =
+                    togglePassword.textContent =
                         "Show";
+
+                    togglePassword.setAttribute(
+                        "aria-label",
+                        "Show password"
+                    );
 
                 }
 
@@ -466,27 +536,9 @@ if (loginForm) {
     }
 
 
-    /* ========================================================
-       MESSAGE
-    ======================================================== */
-
-    function showLoginMessage(
-        message,
-        type
-    ) {
-
-        loginMessage.textContent =
-            message;
-
-        loginMessage.className =
-            `login-message ${type}`;
-
-    }
-
-
-    /* ========================================================
+    /* =====================================================
        LOGIN SUBMIT
-    ======================================================== */
+    ===================================================== */
 
     loginForm.addEventListener(
         "submit",
@@ -495,30 +547,34 @@ if (loginForm) {
             event.preventDefault();
 
 
-            const email =
-                document
-                    .getElementById(
-                        "loginEmail"
-                    )
-                    .value
-                    .trim();
+            console.log(
+                "EstateAI: Login form submitted."
+            );
 
+
+            /* =============================================
+               GET VALUES
+            ============================================= */
+
+            const email =
+                emailInput
+                    ? emailInput.value.trim()
+                    : "";
 
             const password =
-                loginPassword.value;
+                passwordInput
+                    ? passwordInput.value
+                    : "";
+
+            const remember =
+                rememberMe
+                    ? rememberMe.checked
+                    : false;
 
 
-            const rememberMe =
-                document
-                    .getElementById(
-                        "rememberMe"
-                    )
-                    .checked;
-
-
-            /* ================================================
-               BASIC VALIDATION
-            ================================================ */
+            /* =============================================
+               VALIDATION
+            ============================================= */
 
             if (!email) {
 
@@ -527,8 +583,11 @@ if (loginForm) {
                     "error"
                 );
 
-                return;
+                if (emailInput) {
+                    emailInput.focus();
+                }
 
+                return;
             }
 
 
@@ -539,33 +598,64 @@ if (loginForm) {
                     "error"
                 );
 
+                if (passwordInput) {
+                    passwordInput.focus();
+                }
+
                 return;
+            }
+
+
+            /* =============================================
+               BUTTON LOADING
+            ============================================= */
+
+            if (loginBtn) {
+
+                loginBtn.disabled =
+                    true;
+
+                loginBtn.style.opacity =
+                    "0.65";
+
+                loginBtn.style.cursor =
+                    "wait";
+
+            }
+
+            if (loginBtnText) {
+
+                loginBtnText.textContent =
+                    "Signing In...";
 
             }
 
 
-            /* ================================================
-               BUTTON LOADING
-            ================================================ */
+            /* =============================================
+               CLEAR OLD MESSAGE
+            ============================================= */
 
-            loginBtn.disabled = true;
+            if (loginMessage) {
 
-            loginBtn
-                .querySelector("span")
-                .textContent =
-                "Signing In...";
+                loginMessage.textContent =
+                    "";
+
+                loginMessage.className =
+                    "login-message";
+
+            }
 
 
             try {
 
-                /*
-                 * IMPORTANT:
-                 *
-                 * Your FastAPI login endpoint may use
-                 * JSON or OAuth2 form data.
-                 *
-                 * We will first use the JSON endpoint.
-                 */
+                console.log(
+                    "EstateAI: Sending login request..."
+                );
+
+
+                /* =========================================
+                   LOGIN REQUEST
+                ========================================= */
 
                 const response =
                     await fetch(
@@ -577,6 +667,9 @@ if (loginForm) {
                             headers: {
 
                                 "Content-Type":
+                                    "application/json",
+
+                                "Accept":
                                     "application/json"
 
                             },
@@ -596,13 +689,46 @@ if (loginForm) {
                     );
 
 
-                const data =
-                    await response.json();
+                console.log(
+                    "EstateAI: Server status:",
+                    response.status
+                );
 
 
-                /* ============================================
-                   ERROR
-                ============================================ */
+                /* =========================================
+                   READ RESPONSE
+                ========================================= */
+
+                let data = {};
+
+                const responseText =
+                    await response.text();
+
+
+                if (responseText) {
+
+                    try {
+
+                        data =
+                            JSON.parse(
+                                responseText
+                            );
+
+                    } catch (error) {
+
+                        console.error(
+                            "Invalid JSON response:",
+                            responseText
+                        );
+
+                    }
+
+                }
+
+
+                /* =========================================
+                   SERVER ERROR
+                ========================================= */
 
                 if (!response.ok) {
 
@@ -629,8 +755,14 @@ if (loginForm) {
                             errorMessage =
                                 data.detail
                                     .map(
-                                        item =>
-                                            item.msg
+                                        function (item) {
+
+                                            return (
+                                                item.msg ||
+                                                "Invalid input."
+                                            );
+
+                                        }
                                     )
                                     .join(" ");
 
@@ -646,29 +778,35 @@ if (loginForm) {
                 }
 
 
-                /* ============================================
-                   SAVE AUTH DATA
-                ============================================ */
+                /* =========================================
+                   TOKEN
+                ========================================= */
 
-                if (data.access_token) {
+                const token =
+                    data.access_token ||
+                    data.token;
+
+
+                if (!token) {
+
+                    console.warn(
+                        "Login successful but no token was returned.",
+                        data
+                    );
+
+                } else {
 
                     localStorage.setItem(
                         "estateai_token",
-                        data.access_token
+                        token
                     );
 
                 }
 
 
-                if (data.token) {
-
-                    localStorage.setItem(
-                        "estateai_token",
-                        data.token
-                    );
-
-                }
-
+                /* =========================================
+                   USER
+                ========================================= */
 
                 if (data.user) {
 
@@ -682,7 +820,11 @@ if (loginForm) {
                 }
 
 
-                if (rememberMe) {
+                /* =========================================
+                   REMEMBER ME
+                ========================================= */
+
+                if (remember) {
 
                     localStorage.setItem(
                         "estateai_remember",
@@ -690,6 +832,10 @@ if (loginForm) {
                     );
 
                 } else {
+
+                    localStorage.removeItem(
+                        "estateai_remember"
+                    );
 
                     sessionStorage.setItem(
                         "estateai_session",
@@ -699,9 +845,9 @@ if (loginForm) {
                 }
 
 
-                /* ============================================
+                /* =========================================
                    SUCCESS
-                ============================================ */
+                ========================================= */
 
                 showLoginMessage(
                     "Login successful! Redirecting...",
@@ -709,34 +855,304 @@ if (loginForm) {
                 );
 
 
+                console.log(
+                    "EstateAI: Login successful."
+                );
+
+
+                /* =========================================
+                   REDIRECT
+                ========================================= */
+
                 setTimeout(
                     function () {
-
-                        /*
-                         * For now send user to
-                         * the main property page.
-                         *
-                         * Later we will create the
-                         * complete dashboard system.
-                         */
 
                         window.location.href =
                             "properties.html";
 
                     },
-                    1000
+                    800
                 );
 
 
             } catch (error) {
 
                 console.error(
-                    "Login Error:",
+                    "EstateAI Login Error:",
                     error
                 );
 
 
+                /* =========================================
+                   CONNECTION ERROR
+                ========================================= */
+
+                let message =
+                    error.message;
+
+
+                if (
+                    error instanceof
+                    TypeError
+                ) {
+
+                    message =
+                        "Cannot connect to EstateAI server. Make sure FastAPI is running on port 8000.";
+
+                }
+
+
                 showLoginMessage(
+                    message ||
+                    "Login failed. Please try again.",
+                    "error"
+                );
+
+
+            } finally {
+
+                /* =========================================
+                   RESET BUTTON
+                ========================================= */
+
+                if (loginBtn) {
+
+                    loginBtn.disabled =
+                        false;
+
+                    loginBtn.style.opacity =
+                        "";
+
+                    loginBtn.style.cursor =
+                        "";
+
+                }
+
+                if (loginBtnText) {
+
+                    loginBtnText.textContent =
+                        "Sign In";
+
+                }
+
+            }
+
+        }
+    );
+
+
+    /* =====================================================
+       ENTER KEY
+    ===================================================== */
+
+    if (emailInput) {
+
+        emailInput.addEventListener(
+            "keydown",
+            function (event) {
+
+                if (
+                    event.key ===
+                    "Enter"
+                ) {
+
+                    event.preventDefault();
+
+                    if (passwordInput) {
+                        passwordInput.focus();
+                    }
+
+                }
+
+            }
+        );
+
+    }
+
+
+    console.log(
+        "EstateAI: auth.js loaded successfully."
+    );
+
+});
+//------------------------------------------------------------------------------------------------------------------------------------------//
+
+
+
+/* ============================================================
+   ESTATEAI FORGOT PASSWORD
+============================================================ */
+
+const forgotForm =
+    document.getElementById("forgotForm");
+
+
+if (forgotForm) {
+
+    const forgotEmail =
+        document.getElementById("forgotEmail");
+
+    const forgotBtn =
+        document.getElementById("forgotBtn");
+
+    const forgotMessage =
+        document.getElementById("forgotMessage");
+
+
+    function showForgotMessage(
+        message,
+        type
+    ) {
+
+        forgotMessage.textContent =
+            message;
+
+        forgotMessage.className =
+            `forgot-message ${type}`;
+
+    }
+
+
+    forgotForm.addEventListener(
+        "submit",
+        async function (event) {
+
+            event.preventDefault();
+
+
+            const email =
+                forgotEmail.value.trim();
+
+
+            /* ================================================
+               VALIDATION
+            ================================================ */
+
+            if (!email) {
+
+                showForgotMessage(
+                    "Please enter your email address.",
+                    "error"
+                );
+
+                forgotEmail.focus();
+
+                return;
+
+            }
+
+
+            const emailPattern =
+                /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+
+            if (!emailPattern.test(email)) {
+
+                showForgotMessage(
+                    "Please enter a valid email address.",
+                    "error"
+                );
+
+                forgotEmail.focus();
+
+                return;
+
+            }
+
+
+            /* ================================================
+               LOADING
+            ================================================ */
+
+            forgotBtn.disabled = true;
+
+            forgotBtn
+                .querySelector("span")
+                .textContent =
+                "Sending...";
+
+
+            try {
+
+                /*
+                 * This endpoint must match the
+                 * forgot-password route in FastAPI.
+                 */
+
+                const response =
+                    await fetch(
+                        `${API_URL}/api/auth/forgot-password`,
+                        {
+
+                            method: "POST",
+
+                            headers: {
+
+                                "Content-Type":
+                                    "application/json"
+
+                            },
+
+                            body:
+                                JSON.stringify({
+                                    email: email
+                                })
+
+                        }
+                    );
+
+
+                const data =
+                    await response.json();
+
+
+                if (!response.ok) {
+
+                    let message =
+                        "Unable to process your request.";
+
+
+                    if (data.detail) {
+
+                        message =
+                            typeof data.detail ===
+                            "string"
+
+                                ? data.detail
+
+                                : "Unable to process your request.";
+
+                    }
+
+
+                    throw new Error(message);
+
+                }
+
+
+                /* ============================================
+                   SUCCESS
+                ============================================ */
+
+                showForgotMessage(
+                    data.message ||
+                    "If an account exists with this email, a password reset link has been sent.",
+                    "success"
+                );
+
+
+                forgotForm.reset();
+
+
+            } catch (error) {
+
+                console.error(
+                    "Forgot Password Error:",
+                    error
+                );
+
+
+                showForgotMessage(
                     error.message ||
                     "Unable to connect to the server.",
                     "error"
@@ -744,12 +1160,12 @@ if (loginForm) {
 
             } finally {
 
-                loginBtn.disabled = false;
+                forgotBtn.disabled = false;
 
-                loginBtn
+                forgotBtn
                     .querySelector("span")
                     .textContent =
-                    "Sign In";
+                    "Send Reset Link";
 
             }
 

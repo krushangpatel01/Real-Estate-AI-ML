@@ -1,4 +1,3 @@
-<!-- EstateAI project file - implementation will be added step by step. -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,7 +13,9 @@
     <title>Login | EstateAI</title>
 
 
-    <!-- Google Fonts -->
+    <!-- =====================================================
+         GOOGLE FONTS
+    ====================================================== -->
 
     <link
         rel="preconnect"
@@ -33,7 +34,9 @@
     >
 
 
-    <!-- ONLY LOGIN CSS -->
+    <!-- =====================================================
+         LOGIN CSS
+    ====================================================== -->
 
     <link
         rel="stylesheet"
@@ -46,20 +49,24 @@
 <body>
 
 
+<!-- =========================================================
+     LOGIN PAGE
+========================================================= -->
+
 <main class="login-page">
 
 
     <div class="login-container">
 
 
-        <!-- ==================================================
+        <!-- =================================================
              LEFT SIDE
-        =================================================== -->
+        ================================================== -->
 
         <section class="login-intro">
 
 
-            <!-- Brand -->
+            <!-- BRAND -->
 
             <a
                 href="index.html"
@@ -77,10 +84,12 @@
             </a>
 
 
-            <!-- Main Content -->
+            <!-- INTRO CONTENT -->
 
             <div class="login-intro-content">
 
+
+                <!-- EYEBROW -->
 
                 <div class="login-eyebrow">
 
@@ -90,6 +99,8 @@
 
                 </div>
 
+
+                <!-- TITLE -->
 
                 <h1>
 
@@ -101,6 +112,8 @@
                 </h1>
 
 
+                <!-- DESCRIPTION -->
+
                 <p>
 
                     Access your EstateAI account and discover
@@ -110,10 +123,14 @@
                 </p>
 
 
-                <!-- Features -->
+                <!-- =================================================
+                     FEATURES
+                ================================================== -->
 
                 <div class="login-features">
 
+
+                    <!-- FEATURE 1 -->
 
                     <div class="login-feature">
 
@@ -136,6 +153,8 @@
                     </div>
 
 
+                    <!-- FEATURE 2 -->
+
                     <div class="login-feature">
 
                         <div class="login-feature-icon">
@@ -156,6 +175,8 @@
 
                     </div>
 
+
+                    <!-- FEATURE 3 -->
 
                     <div class="login-feature">
 
@@ -184,6 +205,8 @@
             </div>
 
 
+            <!-- LEFT FOOTER -->
+
             <div class="login-intro-footer">
 
                 EstateAI
@@ -198,10 +221,9 @@
         </section>
 
 
-
-        <!-- ==================================================
+        <!-- =================================================
              RIGHT SIDE
-        =================================================== -->
+        ================================================== -->
 
         <section class="login-form-section">
 
@@ -209,7 +231,9 @@
             <div class="login-form-wrapper">
 
 
-                <!-- Header -->
+                <!-- =================================================
+                     HEADER
+                ================================================== -->
 
                 <div class="login-header">
 
@@ -224,15 +248,21 @@
                 </div>
 
 
-                <!-- Message -->
+                <!-- =================================================
+                     LOGIN MESSAGE
+                ================================================== -->
 
                 <div
                     id="loginMessage"
                     class="login-message"
+                    role="alert"
+                    aria-live="polite"
                 ></div>
 
 
-                <!-- Form -->
+                <!-- =================================================
+                     LOGIN FORM
+                ================================================== -->
 
                 <form
                     id="loginForm"
@@ -241,14 +271,15 @@
                 >
 
 
-                    <!-- Email -->
+                    <!-- =============================================
+                         EMAIL
+                    ============================================== -->
 
                     <div class="login-field">
 
+
                         <label for="loginEmail">
-
                             Email Address
-
                         </label>
 
 
@@ -256,9 +287,7 @@
 
 
                             <span class="login-input-icon">
-
                                 @
-
                             </span>
 
 
@@ -266,29 +295,32 @@
                                 type="email"
                                 id="loginEmail"
                                 name="email"
-                                placeholder="you@example.com"
-                                autocomplete="email"
+                                placeholder="Enter your email"
+                                autocomplete="username"
                                 required
                             >
 
 
                         </div>
 
+
                     </div>
 
 
-
-                    <!-- Password -->
+                    <!-- =============================================
+                         PASSWORD
+                    ============================================== -->
 
                     <div class="login-field">
 
 
+                        <!-- LABEL + FORGOT PASSWORD -->
+
                         <div class="login-label-row">
 
+
                             <label for="loginPassword">
-
                                 Password
-
                             </label>
 
 
@@ -296,21 +328,20 @@
                                 href="forgot-password.html"
                                 class="login-forgot"
                             >
-
                                 Forgot Password?
-
                             </a>
+
 
                         </div>
 
+
+                        <!-- PASSWORD INPUT -->
 
                         <div class="login-input-wrapper">
 
 
                             <span class="login-input-icon">
-
                                 •••
-
                             </span>
 
 
@@ -324,38 +355,45 @@
                             >
 
 
+                            <!-- SHOW / HIDE -->
+
                             <button
                                 type="button"
                                 id="loginPasswordToggle"
                                 class="login-password-toggle"
+                                aria-label="Show password"
                             >
-
                                 Show
-
                             </button>
 
 
                         </div>
 
+
                     </div>
 
 
-
-                    <!-- Remember -->
+                    <!-- =============================================
+                         REMEMBER ME
+                    ============================================== -->
 
                     <div class="login-options">
 
 
                         <label class="login-remember">
 
+
                             <input
                                 type="checkbox"
                                 id="rememberMe"
+                                name="remember"
                             >
+
 
                             <span>
                                 Remember me
                             </span>
+
 
                         </label>
 
@@ -363,8 +401,9 @@
                     </div>
 
 
-
-                    <!-- Submit -->
+                    <!-- =============================================
+                         LOGIN BUTTON
+                    ============================================== -->
 
                     <button
                         type="submit"
@@ -372,64 +411,77 @@
                         class="login-submit"
                     >
 
-                        <span>
+                        <span id="loginBtnText">
                             Sign In
                         </span>
+
 
                         <span class="login-submit-arrow">
                             →
                         </span>
 
+
                     </button>
-
-
-
-                    <!-- Divider -->
-
-                    <div class="login-divider">
-
-                        <span></span>
-
-                        <small>
-                            NEW TO ESTATEAI?
-                        </small>
-
-                        <span></span>
-
-                    </div>
-
-
-
-                    <!-- Register -->
-
-                    <a
-                        href="register.html"
-                        class="login-create-account"
-                    >
-
-                        Create a New Account
-
-                        <span>
-                            →
-                        </span>
-
-                    </a>
 
 
                 </form>
 
 
-                <!-- Security -->
+                <!-- =================================================
+                     DIVIDER
+                ================================================== -->
+
+                <div class="login-divider">
+
+
+                    <span></span>
+
+
+                    <small>
+                        NEW TO ESTATEAI?
+                    </small>
+
+
+                    <span></span>
+
+
+                </div>
+
+
+                <!-- =================================================
+                     CREATE ACCOUNT
+                ================================================== -->
+
+                <a
+                    href="register.html"
+                    class="login-create-account"
+                >
+
+                    Create a New Account
+
+                    <span>
+                        →
+                    </span>
+
+                </a>
+
+
+                <!-- =================================================
+                     SECURITY
+                ================================================== -->
 
                 <div class="login-security">
+
 
                     <span class="login-security-icon">
                         ✓
                     </span>
 
+
                     <span>
                         Your account information is securely protected.
                     </span>
+
 
                 </div>
 
@@ -446,7 +498,14 @@
 </main>
 
 
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
+<script src="../assets/js/main.js"></script>
+
 <script src="../assets/js/auth.js"></script>
+
 
 </body>
 
