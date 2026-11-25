@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 700" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="skyL" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#9cb5c9"/>
+      <stop offset="100%" stop-color="#e9dfd0"/>
+    </linearGradient>
+    <linearGradient id="sofa" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#768899"/>
+      <stop offset="100%" stop-color="#5d6e7d"/>
+    </linearGradient>
+  </defs>
+  <rect width="900" height="700" fill="#e6e1d7"/>
+  <!-- Panoramic Double-Height Glass Wall -->
+  <rect x="60" y="55" width="780" height="440" fill="url(#skyL)" stroke="#1b1e21" stroke-width="10"/>
+  <g stroke="#1b1e21" stroke-width="8">
+    <line x1="260" y1="55" x2="260" y2="495"/>
+    <line x1="460" y1="55" x2="460" y2="495"/>
+    <line x1="660" y1="55" x2="660" y2="495"/>
+  </g>
+  <!-- Distant garden foliage -->
+  <path d="M65,490 Q240,360 440,420 Q650,340 835,410 L835,490 Z" fill="#2c3d2d" opacity="0.82"/>
+  <!-- Warm oak ceiling slats -->
+  <rect x="0" y="0" width="900" height="58" fill="#8b5d38"/>
+  <!-- Floor -->
+  <rect x="0" y="495" width="900" height="205" fill="#cfc7ba"/>
+  <!-- Rug -->
+  <polygon points="160,550 740,550 820,670 80,670" fill="#b7afa2"/>
+  <!-- Modern Low-Profile Sectional Sofa -->
+  <rect x="220" y="455" width="460" height="80" rx="8" fill="url(#sofa)"/>
+  <rect x="210" y="495" width="480" height="48" rx="6" fill="#51606e"/>
+  <rect x="255" y="468" width="52" height="36" rx="4" fill="#c97b49"/>
+  <rect x="595" y="468" width="52" height="36" rx="4" fill="#d4af7a"/>
+  <!-- Travertine coffee table -->
+  <rect x="345" y="575" width="210" height="26" rx="3" fill="#dcd5c8" stroke="#b6aea0"/>
+</svg>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign In — Propvanta | Smart Real Estate Platform</title>
+  <link rel="stylesheet" href="/css/theme.css" />
+  <style>
+    .auth-page { background: #0b1b18; }
+    .auth-form-panel { background: radial-gradient(circle at top right, rgba(212, 170, 99, 0.08), transparent 55%), #0b1b18; }
+    .prop-monogram { width: 34px; height: 34px; border-radius: 8px; background: #d4aa63; color: #111b18; display: grid; place-items: center; font-family: var(--font-serif); font-weight: 700; font-size: 19px; }
+    .btn-ivory { background: #d4aa63; border-color: #d4aa63; color: #111b18; border-radius: 8px; }
+    .btn-ivory:hover { background: #e1bc7a; border-color: #e1bc7a; }
+  </style>
+</head>
+<body>
+  <main class="auth-page">
+    <!-- Left Architectural Twilight Panel -->
+    <section class="auth-visual-panel">
+      <img src="/images/auth-interior.svg" alt="Propvanta Twilight Residence" class="auth-visual-bg" />
+      <div class="auth-visual-overlay"></div>
+
+      <div class="auth-visual-top">
+        <a href="/" class="brand-mark">
+          <span class="prop-monogram">P</span>
+          <span class="brand-wordmark">
+            <span class="brand-name" style="letter-spacing: 0.1em; font-size: 18px;">PROPVANTA</span>
+            <span class="brand-sub" style="font-size: 8px; letter-spacing: 0.24em;">Smart Architectural Realty</span>
+          </span>
+        </a>
+      </div>
+
+      <div class="auth-visual-bottom">
+        <span class="eyebrow">Predictive Residential Intelligence</span>
+        <h2 class="auth-quote-title">
+          Welcome back to<br />
+          <span class="serif-italic-gold">quiet precision.</span>
+        </h2>
+        <p class="auth-quote-sub">
+          Access your saved architectural residences, real-time Ridge ML property valuations, and private viewing concierge.
+        </p>
+
+        <div class="auth-ml-stat-strip">
+          <div>
+            <div class="auth-stat-val">96.8%</div>
+            <div class="auth-stat-lbl">ML Model R² Fit</div>
+          </div>
+          <div>
+            <div class="auth-stat-val">24/7</div>
+            <div class="auth-stat-lbl">Valuation Engine</div>
+          </div>
+          <div>
+            <div class="auth-stat-val">SQLite</div>
+            <div class="auth-stat-lbl">Persistent Vault</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Right Sign-In Form Panel -->
+    <section class="auth-form-panel">
+      <div class="auth-card">
+        <div class="auth-card-header">
+          <span class="eyebrow">Member Access</span>
+          <h1 class="auth-card-title">
+            Enter your <span class="serif-italic-gold">sanctuary.</span>
+          </h1>
+          <p class="auth-card-desc">
+            Sign in to unlock personalized ML property match scores and your valuation ledger.
+          </p>
+        </div>
+
+        <div id="loginAlert" class="alert-banner" role="alert"></div>
+
+        <form id="loginForm" class="auth-form" novalidate>
+          <div class="field-group">
+            <label for="email" class="field-label">Email Address</label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              class="field-input"
+              placeholder="name@veluxestates.ai"
+              autocomplete="email"
+              required
+            />
+          </div>
+
+          <div class="field-group">
+            <label for="password" class="field-label">Password</label>
+            <input
+              id="password"
+              name="password"
+              type="password"
+              class="field-input"
+              placeholder="Enter your password"
+              autocomplete="current-password"
+              required
+            />
+          </div>
+
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <label class="check-pill" style="display: inline-flex; align-items: center; gap: 8px; font-size: 13px; color: var(--text-muted); cursor: pointer;">
+              <input id="rememberMe" type="checkbox" checked style="accent-color: var(--gold);" />
+              Keep session active for 30 days
+            </label>
+          </div>
+
+          <button id="loginSubmitBtn" type="submit" class="btn-ivory" style="width: 100%; margin-top: 6px;">
+            Sign In to Portfolio <span>&#8600;</span>
+          </button>
+        </form>
+
+        <div class="demo-box">
+          <div>
+            <strong style="color: var(--gold); font-weight: 500;">Instant Demo Account</strong><br />
+            <span style="color: var(--text-muted);">demo@propvanta.ai · Propvanta@2026</span>
+          </div>
+          <button id="fillDemoBtn" type="button" class="demo-btn">Auto-Fill &amp; Sign In</button>
+        </div>
+
+        <div class="auth-footer-links">
+          <span>New to Propvanta? <a href="/register">Create an account</a></span>
+          <a href="/">&#8592; Back to Home</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="/js/login.js"></script>
+</body>
+</html>

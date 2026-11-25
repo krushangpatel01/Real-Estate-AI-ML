@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Propvanta — Smart Real Estate Platform With ML</title>
+  <link rel="stylesheet" href="/css/theme.css" />
+  <link rel="stylesheet" href="/css/home.css" />
+</head>
+<body>
+  <!-- ==================== NAVBAR ==================== -->
+  <header id="mainNav" class="velux-nav">
+    <a href="/" class="brand-mark">
+      <span class="prop-monogram">P</span>
+      <span class="brand-wordmark">
+        <span class="brand-name" style="letter-spacing: 0.1em; font-size: 18px;">PROPVANTA</span>
+        <span class="brand-sub" style="font-size: 8px; letter-spacing: 0.24em;">Smart Architectural Realty</span>
+      </span>
+    </a>
+
+    <nav class="nav-center-pills" aria-label="Primary">
+      <a href="#hero" class="nav-pill-link active">Home</a>
+      <a href="#philosophy" class="nav-pill-link">Philosophy</a>
+      <a href="#collection" class="nav-pill-link">Architectures</a>
+      <a href="#advisors" class="nav-pill-link">Advisors</a>
+    </nav>
+
+    <div class="nav-actions">
+      <div id="authNavArea" style="display: flex; align-items: center; gap: 12px;">
+        <a href="/login" class="nav-link-muted">Login</a>
+        <a href="/register" class="btn-gold-sm">Register</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==================== HERO + DOCKED SEARCH ==================== -->
+  <section class="prop-hero" id="hero">
+    <img src="/images/hero-1.svg" alt="Propvanta Twilight Architectural Residence" class="prop-hero-bg" />
+    <div class="prop-hero-overlay"></div>
+
+    <div class="prop-hero-inner">
+      <div class="prop-hero-copy">
+        <h1 class="prop-hero-title">
+          Live a life of pure architecture with nature.
+        </h1>
+        <p class="prop-hero-sub">
+          Discover curated luxury residences where monumental architecture converges with machine learning market valuation and intelligent discovery.
+        </p>
+
+        <div class="prop-hero-btns">
+          <a href="#collection" class="btn-hero-gold">
+            Explore Collection <span>&#8594;</span>
+          </a>
+          <a href="/register" class="btn-hero-outline" id="heroRegisterBtn">
+            Register
+          </a>
+          <a href="/login" class="btn-hero-outline" id="heroLoginBtn">
+            Login
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Docked Bottom Search Bar -->
+    <div class="hero-search-dock">
+      <form id="filterForm" class="hero-search-grid">
+        <div class="dock-field">
+          <label class="dock-label" for="locationFilter">Search By City / District</label>
+          <select id="locationFilter" class="dock-select">
+            <option value="All">All Districts</option>
+          </select>
+        </div>
+
+        <div class="dock-field">
+          <label class="dock-label" for="typeFilter">Property</label>
+          <select id="typeFilter" class="dock-select">
+            <option value="All">All Categories</option>
+            <option value="Villa">Villa</option>
+            <option value="Pavilion">Pavilion</option>
+            <option value="Apartment">Apartment</option>
+            <option value="Estate">Estate</option>
+          </select>
+        </div>
+
+        <div class="dock-field">
+          <label class="dock-label" for="maxPriceFilter">Max Budget</label>
+          <select id="maxPriceFilter" class="dock-select">
+            <option value="0">Any Budget</option>
+            <option value="1500000">Up to $1.50M</option>
+            <option value="2200000">Up to $2.20M</option>
+            <option value="2700000">Up to $2.70M</option>
+          </select>
+        </div>
+
+        <div class="dock-field">
+          <label class="dock-label" for="minBedsFilter">Bedrooms</label>
+          <select id="minBedsFilter" class="dock-select">
+            <option value="0">Any Bedrooms</option>
+            <option value="3">3+ Bedrooms</option>
+            <option value="4">4+ Bedrooms</option>
+            <option value="5">5+ Bedrooms</option>
+          </select>
+        </div>
+
+        <button type="submit" class="dock-submit-btn">Find Residences</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ==================== MEMBER STRIP (WHEN LOGGED IN) ==================== -->
+  <section id="memberStrip" class="member-strip">
+    <div class="member-welcome">
+      <span class="member-badge" id="memberRoleBadge">Member</span>
+      <div>
+        <div style="font-family: var(--font-serif); font-size: 23px;" id="memberGreeting">Welcome back</div>
+        <div style="font-size: 12px; color: var(--text-muted);" id="memberSubtext">ML Match calibrated for your profile</div>
+      </div>
+    </div>
+
+    <div class="member-metrics">
+      <div>
+        <span class="member-metric-val" id="statSavedCount">0</span>
+        <span class="member-metric-lbl">Saved Homes</span>
+      </div>
+      <div>
+        <span class="member-metric-val" id="statViewingCount">0</span>
+        <span class="member-metric-lbl">Private Viewings</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 3-CARD PHILOSOPHY & ML INTELLIGENCE ==================== -->
+  <section class="cream-section" id="philosophy" style="padding-bottom: 24px;">
+    <div class="cream-container">
+      <div class="pillars-3-grid">
+        <article class="pillar-light-card">
+          <div>
+            <div class="pillar-kicker">Philosophy 01</div>
+            <h2 class="pillar-heading">Sculptural Living in Pure Equilibrium</h2>
+            <p class="pillar-copy">
+              Every home in our archive is selected for natural daylight geometry, enduring materials, and seamless indoor-outdoor sanctuary.
+            </p>
+          </div>
+          <div class="pillar-foot">
+            <span>Architecture &amp; Design Philosophy</span>
+            <span>&#8594;</span>
+          </div>
+        </article>
+
+        <article class="pillar-dark-card">
+          <div>
+            <div class="pillar-kicker">Intelligence 02</div>
+            <h2 class="pillar-heading">Machine Learning Valuation Precision</h2>
+            <p class="pillar-copy">
+              Our Ridge L2 Regression model analyzes spatial area, smart-home telemetry, and micro-district comps to verify true market value.
+            </p>
+          </div>
+          <div class="pillar-foot">
+            <span>&#9679; <span id="mlR2Label">96.8%</span> R² Fit Precision</span>
+            <span style="color: var(--gold-pill);">Predictive Engine</span>
+          </div>
+        </article>
+
+        <article class="pillar-light-card">
+          <div>
+            <div class="pillar-kicker">Discovery 03</div>
+            <h2 class="pillar-heading">Geospatial Proximity &amp; Routing</h2>
+            <p class="pillar-copy">
+              Explore diplomatic enclaves and lakefront districts scored by growth trajectory, acoustic calm, and net-zero readiness.
+            </p>
+          </div>
+          <div class="pillar-foot">
+            <span>Smart District Scoring</span>
+            <span>&#8594;</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== ARCHITECTURAL SIGNATURES PORTFOLIO ==================== -->
+  <section class="cream-section" id="collection">
+    <div class="cream-container">
+      <div class="portfolio-header">
+        <div>
+          <div class="portfolio-eyebrow">Curated Portfolio</div>
+          <h2 class="portfolio-title">Architectural Signatures</h2>
+        </div>
+
+        <div class="filter-tabs" id="typeTabs">
+          <button type="button" class="filter-tab active" data-type="All">All</button>
+          <button type="button" class="filter-tab" data-type="Villa">Villa</button>
+          <button type="button" class="filter-tab" data-type="Apartment">Apartment</button>
+          <button type="button" class="filter-tab" data-type="Estate">Estate</button>
+          <button type="button" class="filter-tab" data-type="Pavilion">Pavilion</button>
+        </div>
+      </div>
+
+      <div id="propertiesGrid" class="sig-grid"></div>
+
+      <div class="center-cta-wrap">
+        <button id="toggleAllResidencesBtn" type="button" class="btn-forest-pill">
+          View All Architectural Residences <span>&#8594;</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== DARK FOREST QUOTE & KPI METRICS ==================== -->
+  <section class="forest-quote-band">
+    <blockquote class="forest-quote-text">
+      “The details are not the details. They make the design.”
+    </blockquote>
+    <div class="forest-quote-attr">
+      — Charles Eames · Guiding Propvanta Architectural Philosophy
+    </div>
+
+    <div class="metrics-4-grid">
+      <div>
+        <div class="metric-num">$140M+</div>
+        <div class="metric-lbl">Curated Assets</div>
+      </div>
+      <div>
+        <div class="metric-num" style="color: var(--emerald-dot);" id="bannerR2Stat">96.8%</div>
+        <div class="metric-lbl">ML Model Precision</div>
+      </div>
+      <div>
+        <div class="metric-num" style="color: var(--gold-pill);">100%</div>
+        <div class="metric-lbl">ML Verified Listings</div>
+      </div>
+      <div>
+        <div class="metric-num">6 Districts</div>
+        <div class="metric-lbl">Smart Coverage</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== ARCHITECTS & PROPERTY ADVISORS ==================== -->
+  <section class="cream-section" id="advisors">
+    <div class="cream-container">
+      <div class="advisors-header">
+        <div class="portfolio-eyebrow">Advisory Council</div>
+        <h2 class="portfolio-title">Architects &amp; Property Advisors</h2>
+        <p style="margin-top: 10px; font-size: 14px; color: var(--ink-muted);">
+          Collaborating with visionary architects and machine learning directors to curate landmark smart residences.
+        </p>
+      </div>
+
+      <div class="advisors-5-grid">
+        <article class="advisor-card">
+          <img src="/images/team/krushang-panara.jpg" alt="Krushang Panara" />
+          <div class="advisor-name">Krushang Panara</div>
+          <div class="advisor-role">Principal Architect</div>
+        </article>
+        <article class="advisor-card">
+          <img src="/images/team/jeel-babariya.jpg" alt="Jeel Babariya" />
+          <div class="advisor-name">Jeel Babariya</div>
+          <div class="advisor-role">Head of ML Valuation</div>
+        </article>
+        <article class="advisor-card">
+          <img src="/images/team/krish-zalavadiya.jpg" alt="Krish Zalavadiya" />
+          <div class="advisor-name">Krish Zalavadiya</div>
+          <div class="advisor-role">Private Client Director</div>
+        </article>
+        <article class="advisor-card">
+          <img src="/images/team/neel-vachhani.jpg" alt="Neel Vachhani" />
+          <div class="advisor-name">Neel Vachhani</div>
+          <div class="advisor-role">Smart Systems Lead</div>
+        </article>
+        <article class="advisor-card">
+          <img src="/images/team/anjan-vachhani.jpg" alt="Anjan Vachhani" />
+          <div class="advisor-name">Anjan Vachhani</div>
+          <div class="advisor-role">Property Advisor</div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== MEMBERSHIP CTA CARD ==================== -->
+  <section class="cream-section" style="padding-top: 0;">
+    <div class="cream-container">
+      <div class="membership-cta-box">
+        <div style="max-width: 560px;">
+          <div style="font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold-pill);">
+            Unlock Off-Market Valuations &amp; Private Concierge
+          </div>
+          <h2 class="membership-title">
+            Begin your Propvanta membership today.
+          </h2>
+          <p style="margin-top: 10px; font-size: 14px; color: rgba(245, 242, 235, 0.75);">
+            Create a verified profile to save residences, receive personalized ML match scores, and reserve private twilight viewings.
+          </p>
+        </div>
+
+        <div class="membership-actions" id="membershipCtaActions">
+          <a href="/register" class="btn-hero-gold">Create Account</a>
+          <a href="/login" class="btn-hero-outline">Sign In</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="prop-footer">
+    <div class="prop-footer-grid">
+      <div>
+        <div class="brand-mark" style="margin-bottom: 14px;">
+          <span class="prop-monogram">P</span>
+          <span class="brand-wordmark">
+            <span class="brand-name" style="letter-spacing: 0.1em; font-size: 18px;">PROPVANTA</span>
+            <span class="brand-sub" style="font-size: 8px; letter-spacing: 0.24em;">Smart Architectural Realty</span>
+          </span>
+        </div>
+        <p style="font-size: 13px; line-height: 1.7; max-width: 300px;">
+          Curating architectural residences backed by Ridge Multiple Regression valuation and persistent SQLite portfolio intelligence.
+        </p>
+        <p style="font-size: 12px; color: var(--gold-pill); margin-top: 14px;">
+          Road 11, Baridhara Diplomatic Zone, Dhaka
+        </p>
+      </div>
+
+      <div>
+        <div class="footer-col-title">Navigation</div>
+        <div class="footer-links">
+          <a href="#hero">Home</a>
+          <a href="#philosophy">Philosophy</a>
+          <a href="#collection">Architectural Signatures</a>
+          <a href="#advisors">Advisory Council</a>
+        </div>
+      </div>
+
+      <div>
+        <div class="footer-col-title">Intelligence</div>
+        <div class="footer-links">
+          <a href="#philosophy">Ridge ML Valuation</a>
+          <a href="#collection">Smart District Scoring</a>
+          <a href="#" id="footerBookViewingLink">Book Private Viewing</a>
+        </div>
+      </div>
+
+      <div>
+        <div class="footer-col-title">Account Access</div>
+        <div class="footer-links">
+          <a href="/login">Sign In</a>
+          <a href="/register">Create Account</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="prop-footer-bottom">
+      <span>© 2026 Propvanta Smart Real Estate Platform. All rights reserved.</span>
+      <span>Powered by Ridge ML &amp; SQLite Database</span>
+    </div>
+  </footer>
+
+  <!-- ==================== PRIVATE VIEWING MODAL ==================== -->
+  <div id="viewingModal" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-card">
+      <button id="closeModalBtn" class="modal-close" type="button" aria-label="Close modal">&#10005;</button>
+      <span class="eyebrow">Concierge Reservation</span>
+      <h3 id="modalTitle" class="serif-headline" style="font-size: 34px; margin-top: 10px;">
+        Book a <span class="serif-italic-gold">private viewing.</span>
+      </h3>
+      <p style="font-size: 13px; color: var(--text-muted); margin-top: 8px; margin-bottom: 20px;">
+        Reserve a twilight architectural tour. Confirmations are saved directly to our SQLite database.
+      </p>
+
+      <div id="viewingAlert" class="alert-banner" style="margin-bottom: 14px;"></div>
+
+      <form id="viewingForm" class="auth-form">
+        <div class="field-group">
+          <label class="field-label" for="viewPropertySelect">Residence</label>
+          <select id="viewPropertySelect" class="field-select"></select>
+        </div>
+        <div class="form-grid-2">
+          <div class="field-group">
+            <label class="field-label" for="viewFullName">Full Name</label>
+            <input id="viewFullName" type="text" class="field-input" required placeholder="Your full name" />
+          </div>
+          <div class="field-group">
+            <label class="field-label" for="viewEmail">Email</label>
+            <input id="viewEmail" type="email" class="field-input" required placeholder="you@domain.com" />
+          </div>
+        </div>
+        <div class="form-grid-2">
+          <div class="field-group">
+            <label class="field-label" for="viewPhone">Phone</label>
+            <input id="viewPhone" type="tel" class="field-input" placeholder="+880 1711-000000" />
+          </div>
+          <div class="field-group">
+            <label class="field-label" for="viewDate">Preferred Date</label>
+            <input id="viewDate" type="date" class="field-input" required />
+          </div>
+        </div>
+        <div class="field-group">
+          <label class="field-label" for="viewNotes">Private Notes</label>
+          <input id="viewNotes" type="text" class="field-input" placeholder="e.g. Interested in smart KNX walkthrough" />
+        </div>
+        <button type="submit" class="btn-hero-gold" style="width: 100%; justify-content: center;">
+          Confirm Viewing Request <span>&#8594;</span>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <script src="/js/home.js"></script>
+</body>
+</html>

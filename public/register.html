@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Create Account — Propvanta | Smart Real Estate Platform</title>
+  <link rel="stylesheet" href="/css/theme.css" />
+  <style>
+    .auth-page { background: #0b1b18; }
+    .auth-form-panel { background: radial-gradient(circle at top right, rgba(212, 170, 99, 0.08), transparent 55%), #0b1b18; }
+    .prop-monogram { width: 34px; height: 34px; border-radius: 8px; background: #d4aa63; color: #111b18; display: grid; place-items: center; font-family: var(--font-serif); font-weight: 700; font-size: 19px; }
+    .btn-ivory { background: #d4aa63; border-color: #d4aa63; color: #111b18; border-radius: 8px; }
+    .btn-ivory:hover { background: #e1bc7a; border-color: #e1bc7a; }
+  </style>
+</head>
+<body>
+  <main class="auth-page">
+    <!-- Left Architectural Twilight Panel -->
+    <section class="auth-visual-panel">
+      <img src="/images/hero-1.svg" alt="Propvanta Twilight Residence" class="auth-visual-bg" />
+      <div class="auth-visual-overlay"></div>
+
+      <div class="auth-visual-top">
+        <a href="/" class="brand-mark">
+          <span class="prop-monogram">P</span>
+          <span class="brand-wordmark">
+            <span class="brand-name" style="letter-spacing: 0.1em; font-size: 18px;">PROPVANTA</span>
+            <span class="brand-sub" style="font-size: 8px; letter-spacing: 0.24em;">Smart Architectural Realty</span>
+          </span>
+        </a>
+      </div>
+
+      <div class="auth-visual-bottom">
+        <span class="eyebrow">The Art of Arriving Home</span>
+        <h2 class="auth-quote-title">
+          Live a little<br />
+          <span class="serif-italic-gold">more intelligently.</span>
+        </h2>
+        <p class="auth-quote-sub">
+          Join Velux Estates to receive tailored ML investment forecasts, save bespoke residences, and compute instant property appraisals stored in your private database profile.
+        </p>
+
+        <div class="auth-ml-stat-strip">
+          <div>
+            <div class="auth-stat-val">Ridge L2</div>
+            <div class="auth-stat-lbl">ML Valuation</div>
+          </div>
+          <div>
+            <div class="auth-stat-val">5-Yr ROI</div>
+            <div class="auth-stat-lbl">Growth Forecast</div>
+          </div>
+          <div>
+            <div class="auth-stat-val">Private</div>
+            <div class="auth-stat-lbl">Concierge Access</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Right Registration Form Panel -->
+    <section class="auth-form-panel">
+      <div class="auth-card">
+        <div class="auth-card-header">
+          <span class="eyebrow">Private Membership</span>
+          <h1 class="auth-card-title">
+            Create your <span class="serif-italic-gold">profile.</span>
+          </h1>
+          <p class="auth-card-desc">
+            Calibrate your preferred district and budget tier so our ML engine ranks residences to your exact criteria.
+          </p>
+        </div>
+
+        <div id="registerAlert" class="alert-banner" role="alert"></div>
+
+        <form id="registerForm" class="auth-form" novalidate>
+          <div class="form-grid-2">
+            <div class="field-group">
+              <label for="fullName" class="field-label">Full Name</label>
+              <input
+                id="fullName"
+                name="fullName"
+                type="text"
+                class="field-input"
+                placeholder="e.g. Nadia Karim"
+                required
+              />
+            </div>
+
+            <div class="field-group">
+              <label for="phone" class="field-label">Phone (Optional)</label>
+              <input
+                id="phone"
+                name="phone"
+                type="tel"
+                class="field-input"
+                placeholder="+880 1711-000000"
+              />
+            </div>
+          </div>
+
+          <div class="field-group">
+            <label for="email" class="field-label">Email Address</label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              class="field-input"
+              placeholder="nadia@domain.com"
+              autocomplete="email"
+              required
+            />
+          </div>
+
+          <div class="form-grid-2">
+            <div class="field-group">
+              <label for="role" class="field-label">Account Role</label>
+              <select id="role" name="role" class="field-select">
+                <option value="buyer">Private Buyer</option>
+                <option value="investor">Real Estate Investor</option>
+                <option value="seller">Property Owner / Seller</option>
+                <option value="agent">Advisory Partner</option>
+              </select>
+            </div>
+
+            <div class="field-group">
+              <label for="budgetTier" class="field-label">Target Budget Tier</label>
+              <select id="budgetTier" name="budgetTier" class="field-select">
+                <option value="under-1.5m">Up to $1.5M</option>
+                <option value="1.5m-2.5m" selected>$1.5M – $2.5M</option>
+                <option value="2.5m-plus">$2.5M+ Flagship</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="field-group">
+            <label for="preferredLocation" class="field-label">Preferred District (For ML Match Scoring)</label>
+            <select id="preferredLocation" name="preferredLocation" class="field-select">
+              <option value="Baridhara · Dhaka">Baridhara · Dhaka</option>
+              <option value="Gulshan North · Dhaka">Gulshan North · Dhaka</option>
+              <option value="Banani Lakefront · Dhaka">Banani Lakefront · Dhaka</option>
+              <option value="Bashundhara Enclave · Dhaka">Bashundhara Enclave · Dhaka</option>
+              <option value="Dhanmondi Heritage · Dhaka">Dhanmondi Heritage · Dhaka</option>
+              <option value="Purbachal Smart City">Purbachal Smart City</option>
+            </select>
+          </div>
+
+          <div class="form-grid-2">
+            <div class="field-group">
+              <label for="password" class="field-label">Password</label>
+              <input
+                id="password"
+                name="password"
+                type="password"
+                class="field-input"
+                placeholder="Min 6 characters"
+                autocomplete="new-password"
+                required
+              />
+            </div>
+
+            <div class="field-group">
+              <label for="confirmPassword" class="field-label">Confirm Password</label>
+              <input
+                id="confirmPassword"
+                name="confirmPassword"
+                type="password"
+                class="field-input"
+                placeholder="Repeat password"
+                autocomplete="new-password"
+                required
+              />
+            </div>
+          </div>
+
+          <button id="registerSubmitBtn" type="submit" class="btn-ivory" style="width: 100%; margin-top: 6px;">
+            Create Member Account <span>&#8600;</span>
+          </button>
+        </form>
+
+        <div class="auth-footer-links">
+          <span>Already registered? <a href="/login">Sign in here</a></span>
+          <a href="/">&#8592; Back to Home</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="/js/register.js"></script>
+</body>
+</html>

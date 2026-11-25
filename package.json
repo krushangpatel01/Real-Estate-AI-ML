@@ -1,0 +1,19 @@
+{
+  "name": "velux-smart-real-estate",
+  "version": "1.0.0",
+  "description": "Velux Estates - Smart Real Estate Platform with Machine Learning Valuation Engine",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "test": "node test/verify.js"
+  },
+  "keywords": [
+    "real-estate",
+    "machine-learning",
+    "sqlite",
+    "valuation",
+    "luxury"
+  ],
+  "license": "MIT"
+}

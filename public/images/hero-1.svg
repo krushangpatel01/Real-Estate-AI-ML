@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="sky1" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0%" stop-color="#19212c"/>
+      <stop offset="45%" stop-color="#2a3544"/>
+      <stop offset="80%" stop-color="#14191f"/>
+      <stop offset="100%" stop-color="#0b0d0f"/>
+    </linearGradient>
+    <radialGradient id="warmGlow1" cx="58%" cy="62%" r="36%">
+      <stop offset="0%" stop-color="#ffbe6b" stop-opacity="0.72"/>
+      <stop offset="45%" stop-color="#d49449" stop-opacity="0.28"/>
+      <stop offset="100%" stop-color="#0b0d0f" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="glassWarm" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffe2b0" stop-opacity="0.88"/>
+      <stop offset="55%" stop-color="#d99a4e" stop-opacity="0.78"/>
+      <stop offset="100%" stop-color="#7c4f22" stop-opacity="0.85"/>
+    </linearGradient>
+    <linearGradient id="lawn1" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1c2719"/>
+      <stop offset="100%" stop-color="#0a0e09"/>
+    </linearGradient>
+    <linearGradient id="cedar" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#5c3a22"/>
+      <stop offset="50%" stop-color="#7c5030"/>
+      <stop offset="100%" stop-color="#482d1a"/>
+    </linearGradient>
+    <filter id="softBlur"><feGaussianBlur stdDeviation="24"/></filter>
+  </defs>
+  <rect width="1600" height="900" fill="url(#sky1)"/>
+  <!-- Subtle twilight mist -->
+  <ellipse cx="950" cy="300" rx="680" ry="200" fill="#4f6177" opacity="0.16" filter="url(#softBlur)"/>
+  <rect width="1600" height="900" fill="url(#warmGlow1)"/>
+
+  <!-- Background trees silhouette -->
+  <path d="M0,560 Q140,390 310,480 Q460,360 640,470 Q840,380 1050,490 Q1290,340 1600,450 L1600,740 L0,740 Z" fill="#101518" opacity="0.9"/>
+
+  <!-- Lawn -->
+  <polygon points="0,730 1600,670 1600,900 0,900" fill="url(#lawn1)"/>
+  <!-- Warm spill light on lawn -->
+  <polygon points="620,705 1410,690 1500,820 490,820" fill="#d49b54" opacity="0.14" filter="url(#softBlur)"/>
+
+  <!-- Upper Two-Story Dark Steel & Glass Pavilion -->
+  <rect x="420" y="235" width="560" height="230" fill="#161a1f" stroke="#2a313a" stroke-width="2"/>
+  <rect x="420" y="220" width="575" height="18" fill="#101317"/>
+  <!-- Upper vertical fins & warm glowing interior -->
+  <rect x="455" y="262" width="490" height="175" fill="url(#glassWarm)" opacity="0.65"/>
+  <g fill="#161a1f">
+    <rect x="488" y="260" width="14" height="180"/><rect x="532" y="260" width="14" height="180"/>
+    <rect x="576" y="260" width="14" height="180"/><rect x="620" y="260" width="14" height="180"/>
+    <rect x="664" y="260" width="14" height="180"/><rect x="708" y="260" width="14" height="180"/>
+    <rect x="752" y="260" width="14" height="180"/><rect x="796" y="260" width="14" height="180"/>
+    <rect x="840" y="260" width="14" height="180"/><rect x="884" y="260" width="14" height="180"/>
+  </g>
+
+  <!-- Ground Floor Left Cedar Wing -->
+  <rect x="315" y="455" width="415" height="255" fill="#1d1814"/>
+  <rect x="330" y="470" width="380" height="230" fill="url(#cedar)" opacity="0.72"/>
+  <!-- Horizontal window slot -->
+  <rect x="370" y="535" width="215" height="44" fill="url(#glassWarm)" stroke="#14181c" stroke-width="4"/>
+
+  <!-- Ground Floor Right Glass Pavilion -->
+  <rect x="720" y="420" width="710" height="285" fill="#15191e" stroke="#2c333c" stroke-width="3"/>
+  <!-- Cedar ceiling soffit -->
+  <polygon points="735,436 1415,436 1385,480 755,480" fill="url(#cedar)"/>
+  <!-- Warm glowing living & dining interior -->
+  <rect x="745" y="480" width="640" height="215" fill="url(#glassWarm)"/>
+  <!-- Interior architectural silhouettes: staircase, dining table, pendant lights -->
+  <rect x="765" y="485" width="190" height="210" fill="#a87038" opacity="0.45"/>
+  <path d="M775,680 L895,525 L925,525 L805,680 Z" fill="#3a2716" opacity="0.65"/>
+  <rect x="975" y="620" width="165" height="12" fill="#23180f"/>
+  <rect x="995" y="632" width="10" height="46" fill="#23180f"/>
+  <rect x="1110" y="632" width="10" height="46" fill="#23180f"/>
+  <circle cx="1030" cy="520" r="12" fill="#fff3d6" opacity="0.9"/>
+  <circle cx="1090" cy="520" r="12" fill="#fff3d6" opacity="0.9"/>
+  <!-- Sliding glass mullions -->
+  <g fill="#15191e">
+    <rect x="955" y="475" width="10" height="225"/>
+    <rect x="1175" y="475" width="10" height="225"/>
+    <rect x="1380" y="475" width="16" height="225"/>
+  </g>
+  <!-- Deck & glass balustrade -->
+  <rect x="715" y="688" width="725" height="28" fill="#281d14"/>
+  <rect x="720" y="646" width="665" height="42" fill="#9bc0d9" opacity="0.12" stroke="#9bc0d9" stroke-opacity="0.25"/>
+
+  <!-- Sculptural Foreground Eucalyptus Tree -->
+  <path d="M635,745 Q642,560 618,415 Q598,285 670,175 Q740,95 855,55 L872,72 Q755,115 692,205 Q635,295 655,425 Q675,565 678,745 Z" fill="#262c32"/>
+  <path d="M628,395 Q545,275 430,225 L442,208 Q562,258 642,375 Z" fill="#22282e"/>
+  <path d="M668,255 Q795,180 985,155 L988,175 Q805,200 682,275 Z" fill="#20262c"/>
+  <!-- Organic canopy foliage clusters -->
+  <g fill="#0e1418" opacity="0.88">
+    <ellipse cx="420" cy="180" rx="220" ry="95"/><ellipse cx="700" cy="110" rx="260" ry="110"/>
+    <ellipse cx="1020" cy="145" rx="230" ry="90"/><ellipse cx="210" cy="240" rx="180" ry="85"/>
+  </g>
+
+  <!-- Subtle dark vignette for readable typography -->
+  <linearGradient id="vig1" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#090b0d" stop-opacity="0.82"/>
+    <stop offset="55%" stop-color="#090b0d" stop-opacity="0.32"/>
+    <stop offset="100%" stop-color="#090b0d" stop-opacity="0.58"/>
+  </linearGradient>
+  <rect width="1600" height="900" fill="url(#vig1)"/>
+</svg>

@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 700" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="wall" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#e5e2dc"/>
+      <stop offset="100%" stop-color="#c6c2b9"/>
+    </linearGradient>
+    <linearGradient id="oak" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#9e6d44"/>
+      <stop offset="100%" stop-color="#6e4728"/>
+    </linearGradient>
+    <linearGradient id="skyIn" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#dce6ec"/>
+      <stop offset="100%" stop-color="#f2ebe0"/>
+    </linearGradient>
+  </defs>
+  <rect width="900" height="700" fill="url(#wall)"/>
+  <!-- Architectural black steel glass door to timber terrace -->
+  <rect x="470" y="70" width="380" height="470" fill="url(#skyIn)" stroke="#1d2023" stroke-width="10"/>
+  <rect x="655" y="70" width="8" height="470" fill="#1d2023"/>
+  <rect x="470" y="290" width="380" height="7" fill="#1d2023"/>
+  <!-- Warm oak soffit outside -->
+  <polygon points="480,75 840,75 840,155 540,155" fill="url(#oak)" opacity="0.88"/>
+  <!-- Minimalist architectural staircase -->
+  <path d="M90,480 L360,210 L420,210 L150,480 Z" fill="#232629"/>
+  <path d="M120,480 L390,210" stroke="#181a1c" stroke-width="4" fill="none"/>
+  <!-- Travertine floor -->
+  <polygon points="0,530 900,530 900,700 0,700" fill="#d3cec4"/>
+  <!-- Minimalist dark dining table & chairs -->
+  <rect x="115" y="495" width="330" height="16" fill="#232629"/>
+  <rect x="145" y="511" width="14" height="105" fill="#191b1d"/>
+  <rect x="395" y="511" width="14" height="105" fill="#191b1d"/>
+  <rect x="175" y="458" width="46" height="37" rx="3" fill="#414548"/>
+  <rect x="255" y="458" width="46" height="37" rx="3" fill="#414548"/>
+  <rect x="335" y="458" width="46" height="37" rx="3" fill="#414548"/>
+  <!-- Indoor olive tree accent -->
+  <ellipse cx="75" cy="390" rx="58" ry="85" fill="#3a4a34" opacity="0.9"/>
+  <rect x="68" y="450" width="14" height="80" fill="#4a3828"/>
+  <rect x="48" y="520" width="54" height="58" fill="#26282a"/>
+</svg>

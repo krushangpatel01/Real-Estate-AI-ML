@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1125" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="bgA" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#12161b"/>
+      <stop offset="100%" stop-color="#090b0d"/>
+    </linearGradient>
+    <linearGradient id="winGlow" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#24303f"/>
+      <stop offset="65%" stop-color="#17202b"/>
+      <stop offset="100%" stop-color="#0e1319"/>
+    </linearGradient>
+    <radialGradient id="sconce" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffcf8b" stop-opacity="0.9"/>
+      <stop offset="40%" stop-color="#d49547" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#12161b" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="900" height="1125" fill="url(#bgA)"/>
+  <!-- Double-height Steel Frame Window looking into twilight garden -->
+  <rect x="130" y="95" width="640" height="690" fill="url(#winGlow)" stroke="#232830" stroke-width="10"/>
+  <g stroke="#1b2026" stroke-width="8">
+    <line x1="343" y1="95" x2="343" y2="785"/>
+    <line x1="556" y1="95" x2="556" y2="785"/>
+    <line x1="130" y1="325" x2="770" y2="325"/>
+    <line x1="130" y1="555" x2="770" y2="555"/>
+  </g>
+  <!-- Silhouetted twilight trees outside -->
+  <path d="M135,780 Q260,590 420,660 Q580,550 765,640 L765,780 Z" fill="#0b1014"/>
+  <!-- Warm Oak Wall Paneling Left & Right -->
+  <rect x="0" y="0" width="125" height="1125" fill="#2c1e14"/>
+  <rect x="775" y="0" width="125" height="1125" fill="#2c1e14"/>
+  <!-- Warm Architectural Sconces -->
+  <circle cx="62" cy="430" r="110" fill="url(#sconce)"/>
+  <circle cx="838" cy="430" r="110" fill="url(#sconce)"/>
+  <rect x="54" y="405" width="16" height="50" rx="2" fill="#ffe1ad"/>
+  <rect x="830" y="405" width="16" height="50" rx="2" fill="#ffe1ad"/>
+
+  <!-- Travertine Hearth & Floor -->
+  <polygon points="0,785 900,785 900,1125 0,1125" fill="#16191e"/>
+  <rect x="250" y="750" width="400" height="150" fill="#262523" stroke="#3b3833"/>
+  <rect x="335" y="810" width="230" height="45" fill="#121110"/>
+  <ellipse cx="450" cy="836" rx="80" ry="14" fill="#e89c45" opacity="0.72"/>
+  <ellipse cx="450" cy="836" rx="140" ry="45" fill="#d48a38" opacity="0.18"/>
+</svg>

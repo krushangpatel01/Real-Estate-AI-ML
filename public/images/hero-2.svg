@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="sky2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0f1724"/>
+      <stop offset="55%" stop-color="#1e2a3b"/>
+      <stop offset="100%" stop-color="#0a0d11"/>
+    </linearGradient>
+    <linearGradient id="pool2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#141e29"/>
+      <stop offset="100%" stop-color="#070a0d"/>
+    </linearGradient>
+    <linearGradient id="warm2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffe5b5"/>
+      <stop offset="65%" stop-color="#d49345"/>
+      <stop offset="100%" stop-color="#6e441c"/>
+    </linearGradient>
+    <filter id="blur2"><feGaussianBlur stdDeviation="22"/></filter>
+  </defs>
+  <rect width="1600" height="900" fill="url(#sky2)"/>
+  <ellipse cx="980" cy="430" rx="520" ry="180" fill="#d49c55" opacity="0.22" filter="url(#blur2)"/>
+
+  <!-- Distant dark ridge & trees -->
+  <path d="M0,530 Q360,440 720,490 Q1120,420 1600,500 L1600,660 L0,660 Z" fill="#0d131a"/>
+
+  <!-- Cantilevered Concrete & Teak Upper Volume -->
+  <rect x="430" y="255" width="840" height="195" fill="#1b2026"/>
+  <rect x="410" y="242" width="880" height="18" fill="#2c333c"/>
+  <rect x="470" y="278" width="760" height="150" fill="url(#warm2)" opacity="0.82"/>
+  <rect x="470" y="278" width="760" height="24" fill="#6b4423"/>
+  <!-- Window mullions -->
+  <g fill="#191e24">
+    <rect x="640" y="278" width="12" height="152"/>
+    <rect x="850" y="278" width="12" height="152"/>
+    <rect x="1055" y="278" width="12" height="152"/>
+  </g>
+
+  <!-- Lower Recessed Base -->
+  <rect x="560" y="450" width="790" height="190" fill="#13171c"/>
+  <rect x="605" y="468" width="695" height="158" fill="url(#warm2)" opacity="0.72"/>
+  <g fill="#13171c">
+    <rect x="780" y="468" width="14" height="162"/>
+    <rect x="960" y="468" width="14" height="162"/>
+    <rect x="1140" y="468" width="14" height="162"/>
+  </g>
+
+  <!-- Infinity Reflection Pool -->
+  <polygon points="180,645 1520,645 1600,900 0,900" fill="url(#pool2)"/>
+  <!-- Golden architectural reflection on water -->
+  <rect x="480" y="655" width="760" height="190" fill="#d49345" opacity="0.22" filter="url(#blur2)"/>
+  <g stroke="#f5cfa0" stroke-opacity="0.24" stroke-width="2">
+    <line x1="520" y1="680" x2="1190" y2="680"/>
+    <line x1="560" y1="712" x2="1140" y2="712"/>
+    <line x1="610" y1="748" x2="1080" y2="748"/>
+  </g>
+
+  <linearGradient id="vig2" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#090b0d" stop-opacity="0.86"/>
+    <stop offset="55%" stop-color="#090b0d" stop-opacity="0.28"/>
+    <stop offset="100%" stop-color="#090b0d" stop-opacity="0.62"/>
+  </linearGradient>
+  <rect width="1600" height="900" fill="url(#vig2)"/>
+</svg>

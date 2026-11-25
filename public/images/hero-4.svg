@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="sky4" x1="0" y1="0" x2="0.3" y2="1">
+      <stop offset="0%" stop-color="#17202b"/>
+      <stop offset="50%" stop-color="#283444"/>
+      <stop offset="100%" stop-color="#0b0d0f"/>
+    </linearGradient>
+    <linearGradient id="warm4" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffe7bd"/>
+      <stop offset="60%" stop-color="#d8974b"/>
+      <stop offset="100%" stop-color="#6b4018"/>
+    </linearGradient>
+    <filter id="blur4"><feGaussianBlur stdDeviation="24"/></filter>
+  </defs>
+  <rect width="1600" height="900" fill="url(#sky4)"/>
+  <ellipse cx="980" cy="510" rx="560" ry="200" fill="#e5ab60" opacity="0.24" filter="url(#blur4)"/>
+
+  <!-- Atmospheric garden silhouettes -->
+  <path d="M0,560 Q280,430 560,510 Q960,400 1320,480 Q1480,430 1600,480 L1600,760 L0,760 Z" fill="#0f1519"/>
+  <rect x="0" y="700" width="1600" height="200" fill="#121a12"/>
+
+  <!-- Flagship Baridhara Residence -->
+  <rect x="440" y="210" width="520" height="230" fill="#171b20"/>
+  <rect x="470" y="240" width="460" height="175" fill="url(#warm4)" opacity="0.62"/>
+  <g fill="#171b20">
+    <rect x="520" y="240" width="12" height="175"/><rect x="580" y="240" width="12" height="175"/>
+    <rect x="640" y="240" width="12" height="175"/><rect x="700" y="240" width="12" height="175"/>
+    <rect x="760" y="240" width="12" height="175"/><rect x="820" y="240" width="12" height="175"/>
+    <rect x="880" y="240" width="12" height="175"/>
+  </g>
+
+  <!-- Main Open-Air Double Pavilion -->
+  <rect x="680" y="420" width="760" height="280" fill="#14181d"/>
+  <rect x="705" y="445" width="710" height="235" fill="url(#warm4)" opacity="0.88"/>
+  <rect x="705" y="445" width="710" height="30" fill="#6d4626"/>
+  <g fill="#14181d">
+    <rect x="895" y="445" width="14" height="235"/>
+    <rect x="1125" y="445" width="14" height="235"/>
+    <rect x="1355" y="445" width="14" height="235"/>
+  </g>
+  <!-- Warm architectural lawn reflection -->
+  <polygon points="700,700 1440,700 1510,835 610,835" fill="#d49b54" opacity="0.16" filter="url(#blur4)"/>
+
+  <!-- Sculptural tree -->
+  <path d="M620,735 Q628,530 605,375 Q585,245 660,135 Q730,65 835,35 L850,52 Q745,85 680,165 Q615,255 635,385 Q655,540 660,735 Z" fill="#23292f"/>
+  <ellipse cx="660" cy="120" rx="280" ry="110" fill="#0d1317" opacity="0.88"/>
+
+  <linearGradient id="vig4" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#090b0d" stop-opacity="0.84"/>
+    <stop offset="55%" stop-color="#090b0d" stop-opacity="0.3"/>
+    <stop offset="100%" stop-color="#090b0d" stop-opacity="0.6"/>
+  </linearGradient>
+  <rect width="1600" height="900" fill="url(#vig4)"/>
+</svg>
